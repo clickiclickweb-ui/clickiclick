@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CLICKICLICK — Agencia digital. Webs profesionales, SEO local, redes sociales y branding para negocios en España. Resultados rápidos desde 299€.">
+  <title>CLICKICLICK — Agencia Digital</title>
+
+  <style>
+    /* ── Reset & base ─────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --orange:      #FF5500;
+      --orange-dark: #e04a00;
+      --navy:        #2D3748;
+      --navy-light:  #3d4f68;
+      --slate:       #718096;
+      --light:       #F7FAFC;
+      --white:       #ffffff;
+      --border:      #E2E8F0;
+      --radius:      10px;
+      --shadow:      0 4px 24px rgba(45,55,72,.10);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                   "Helvetica Neue", Arial, sans-serif;
+      color: var(--navy);
+      line-height: 1.65;
+      background: var(--white);
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    img { display: block; max-width: 100%; }
+
+    /* ── Typography helpers ───────────────────────────── */
+    .section-label {
+      display: inline-block;
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 12px;
+    }
+
+    h2.section-title {
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .section-sub {
+      font-size: 1.05rem;
+      color: var(--slate);
+      max-width: 540px;
+    }
+
+    /* ── Layout ───────────────────────────────────────── */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    section { padding: 96px 0; }
+    section:nth-of-type(even) { background: var(--light); }
+
+    /* ── Buttons ──────────────────────────────────────── */
+    .btn {
+      display: inline-block;
+      padding: 15px 32px;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform .15s, box-shadow .15s, background .15s;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .btn-primary {
+      background: var(--orange);
+      color: var(--white);
+      box-shadow: 0 4px 16px rgba(255,85,0,.35);
+    }
+
+    .btn-primary:hover {
+      background: var(--orange-dark);
+      box-shadow: 0 6px 22px rgba(255,85,0,.45);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid rgba(255,255,255,.5);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--white);
+      background: rgba(255,255,255,.08);
+    }
+
+    /* ════════════════════════════════════════════════════
+       NAV
+    ════════════════════════════════════════════════════ */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--navy);
+      padding: 0 24px;
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: 900;
+      letter-spacing: -.5px;
+    }
+
+    .logo span:first-child { color: var(--orange); }
+    .logo span:last-child  { color: var(--white); }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #a0aec0;
+      font-size: .9rem;
+      font-weight: 500;
+      transition: color .15s;
+    }
+
+    .nav-links a:hover { color: var(--white); }
+
+    .nav-cta {
+      background: var(--orange);
+      color: var(--white) !important;
+      padding: 8px 20px;
+      border-radius: 6px;
+      font-weight: 700 !important;
+    }
+
+    .nav-cta:hover { background: var(--orange-dark); color: var(--white) !important; }
+
+    /* Hide nav links on mobile */
+    @media (max-width: 680px) {
+      .nav-links { display: none; }
+    }
+
+    /* ════════════════════════════════════════════════════
+       HERO
+    ════════════════════════════════════════════════════ */
+    #hero {
+      background: var(--navy);
+      padding: 120px 24px 110px;
+      text-align: center;
+    }
+
+    #hero .eyebrow {
+      display: inline-block;
+      background: rgba(255,85,0,.15);
+      color: var(--orange);
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 100px;
+      margin-bottom: 28px;
+    }
+
+    #hero h1 {
+      font-size: clamp(2rem, 6vw, 3.6rem);
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1.12;
+      max-width: 760px;
+      margin: 0 auto 20px;
+      letter-spacing: -.5px;
+    }
+
+    #hero h1 em {
+      font-style: normal;
+      color: var(--orange);
+    }
+
+    #hero p {
+      font-size: 1.15rem;
+      color: #a0aec0;
+      max-width: 520px;
+      margin: 0 auto 40px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .hero-badges {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      margin-top: 64px;
+      flex-wrap: wrap;
+    }
+
+    .hero-badge {
+      color: #a0aec0;
+      font-size: .875rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hero-badge::before {
+      content: "✓";
+      color: var(--orange);
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    /* ════════════════════════════════════════════════════
+       SERVICES
+    ════════════════════════════════════════════════════ */
+    #services { background: var(--white); }
+
+    #services .section-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    #services .section-sub {
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 24px;
+    }
+
+    .service-card {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px;
+      transition: border-color .2s, box-shadow .2s, transform .2s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card:hover {
+      border-color: var(--orange);
+      box-shadow: var(--shadow);
+      transform: translateY(-4px);
+    }
+
+    .service-card.featured {
+      border-color: var(--orange);
+      background: #fff8f5;
+    }
+
+    .service-card.featured::after {
+      content: "MÁS POPULAR";
+      position: absolute;
+      top: 18px;
+      right: -28px;
+      background: var(--orange);
+      color: white;
+      font-size: .65rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      padding: 4px 36px;
+      transform: rotate(45deg);
+    }
+
+    .service-icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(255,85,0,.10);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      font-size: 1.4rem;
+    }
+
+    .service-card h3 {
+      font-size: 1.1rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .service-card p {
+      font-size: .9rem;
+      color: var(--slate);
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .service-price {
+      font-size: 1.35rem;
+      font-weight: 900;
+      color: var(--orange);
+    }
+
+    .service-price span {
+      font-size: .85rem;
+      font-weight: 500;
+      color: var(--slate);
+    }
+
+    /* ════════════════════════════════════════════════════
+       WHY US
+    ════════════════════════════════════════════════════ */
+    #why { background: var(--light); }
+
+    #why .section-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    #why .section-sub { margin: 0 auto; text-align: center; }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 32px;
+    }
+
+    .why-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 36px 32px;
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+
+    .why-number {
+      font-size: 2.8rem;
+      font-weight: 900;
+      color: var(--orange);
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+
+    .why-card h3 {
+      font-size: 1.1rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .why-card p {
+      font-size: .9rem;
+      color: var(--slate);
+      line-height: 1.6;
+    }
+
+    /* ════════════════════════════════════════════════════
+       HOW IT WORKS
+    ════════════════════════════════════════════════════ */
+    #process { background: var(--white); }
+
+    #process .section-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    #process .section-sub { margin: 0 auto; text-align: center; }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 24px;
+      counter-reset: steps;
+    }
+
+    .step {
+      text-align: center;
+      padding: 16px;
+    }
+
+    .step-num {
+      width: 52px;
+      height: 52px;
+      background: var(--navy);
+      color: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      font-weight: 900;
+      margin: 0 auto 16px;
+    }
+
+    .step h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .step p {
+      font-size: .875rem;
+      color: var(--slate);
+    }
+
+    /* ════════════════════════════════════════════════════
+       CTA BAND
+    ════════════════════════════════════════════════════ */
+    #cta-band {
+      background: var(--orange);
+      padding: 80px 24px;
+      text-align: center;
+    }
+
+    #cta-band h2 {
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 900;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+
+    #cta-band p {
+      color: rgba(255,255,255,.85);
+      font-size: 1.05rem;
+      margin-bottom: 36px;
+    }
+
+    .btn-white {
+      background: var(--white);
+      color: var(--orange);
+      box-shadow: 0 4px 16px rgba(0,0,0,.15);
+    }
+
+    .btn-white:hover {
+      background: var(--light);
+      box-shadow: 0 6px 22px rgba(0,0,0,.2);
+    }
+
+    /* ════════════════════════════════════════════════════
+       CONTACT
+    ════════════════════════════════════════════════════ */
+    #contact { background: var(--navy); padding: 96px 24px; }
+
+    #contact .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    @media (max-width: 720px) {
+      #contact .container { grid-template-columns: 1fr; gap: 40px; }
+    }
+
+    #contact h2 {
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      font-weight: 900;
+      color: var(--white);
+      margin-bottom: 16px;
+    }
+
+    #contact .lead {
+      color: #a0aec0;
+      font-size: 1rem;
+      margin-bottom: 36px;
+    }
+
+    .contact-items { display: flex; flex-direction: column; gap: 20px; }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .contact-item-icon {
+      width: 44px;
+      height: 44px;
+      background: rgba(255,85,0,.15);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .contact-item-text strong {
+      display: block;
+      color: var(--white);
+      font-size: .95rem;
+      font-weight: 700;
+    }
+
+    .contact-item-text span {
+      color: #a0aec0;
+      font-size: .875rem;
+    }
+
+    /* Contact form */
+    .contact-form { display: flex; flex-direction: column; gap: 16px; }
+
+    .contact-form input,
+    .contact-form textarea {
+      background: rgba(255,255,255,.06);
+      border: 1.5px solid rgba(255,255,255,.12);
+      border-radius: 8px;
+      padding: 14px 16px;
+      font-size: .95rem;
+      color: var(--white);
+      font-family: inherit;
+      transition: border-color .2s;
+      resize: vertical;
+      outline: none;
+    }
+
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder { color: #718096; }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus { border-color: var(--orange); }
+
+    .contact-form textarea { min-height: 120px; }
+
+    .contact-form .btn-primary { align-self: flex-start; }
+
+    /* ════════════════════════════════════════════════════
+       FOOTER
+    ════════════════════════════════════════════════════ */
+    footer {
+      background: #1a202c;
+      padding: 32px 24px;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-logo { font-size: 1.2rem; font-weight: 900; letter-spacing: -.5px; }
+    .footer-logo span:first-child { color: var(--orange); }
+    .footer-logo span:last-child  { color: var(--white); }
+
+    footer p {
+      color: #4a5568;
+      font-size: .85rem;
+    }
+
+    /* ════════════════════════════════════════════════════
+       RESPONSIVE tweaks
+    ════════════════════════════════════════════════════ */
+    @media (max-width: 560px) {
+      section { padding: 72px 0; }
+      #hero { padding: 80px 24px 72px; }
+      .hero-badges { gap: 16px; }
+      .hero-badge { font-size: .8rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══ NAV ══════════════════════════════════════════════ -->
+<nav>
+  <div class="nav-inner">
+    <div class="logo">
+      <span>CLICKI</span><span>CLICK</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#services">Servicios</a></li>
+      <li><a href="#why">Por qué nosotros</a></li>
+      <li><a href="#process">Cómo funciona</a></li>
+      <li><a href="#contact" class="nav-cta">Contactar</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ══ HERO ═════════════════════════════════════════════ -->
+<section id="hero">
+  <div class="eyebrow">Agencia Digital · España</div>
+  <h1>Hacemos crecer tu negocio <em>en internet</em></h1>
+  <p>Webs profesionales, SEO local, redes sociales y branding para negocios que quieren resultados reales — sin rodeos y en tiempo récord.</p>
+  <div class="hero-actions">
+    <a href="#contact" class="btn btn-primary">Habla con nosotros</a>
+    <a href="#services" class="btn btn-outline">Ver servicios</a>
+  </div>
+  <div class="hero-badges">
+    <div class="hero-badge">Entrega en 48–72h</div>
+    <div class="hero-badge">Sin permanencias</div>
+    <div class="hero-badge">Precio cerrado, sin sorpresas</div>
+    <div class="hero-badge">Soporte incluido</div>
+  </div>
+</section>
+
+<!-- ══ SERVICES ══════════════════════════════════════════ -->
+<section id="services">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Servicios</span>
+      <h2 class="section-title">Todo lo que necesita tu negocio online</h2>
+      <p class="section-sub">Precios claros, sin letra pequeña. Elige lo que necesitas ahora y amplía cuando quieras.</p>
+    </div>
+    <div class="services-grid">
+
+      <div class="service-card featured">
+        <div class="service-icon">🌐</div>
+        <h3>Web nueva</h3>
+        <p>Página profesional, rápida y optimizada para móvil. Diseño a medida, dominio y hosting incluidos el primer año.</p>
+        <div class="service-price">desde 299€ <span>pago único</span></div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🔄</div>
+        <h3>Rediseño web</h3>
+        <p>Tu web actual renovada: más rápida, más moderna y adaptada a móvil. Conservas tu dominio y todo tu contenido.</p>
+        <div class="service-price">desde 199€ <span>pago único</span></div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">📍</div>
+        <h3>SEO local</h3>
+        <p>Aparece primero en Google cuando alguien busca tu negocio en tu ciudad. Más visitas, más clientes.</p>
+        <div class="service-price">desde 120€ <span>/ mes</span></div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">📱</div>
+        <h3>Gestión de redes sociales</h3>
+        <p>Publicaciones semanales, respuesta a comentarios y crecimiento de seguidores en Instagram y Facebook.</p>
+        <div class="service-price">desde 150€ <span>/ mes</span></div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">✦</div>
+        <h3>Branding completo</h3>
+        <p>Logo, paleta de colores, tipografías y guía de estilo. Una identidad que hace que tu negocio se recuerde.</p>
+        <div class="service-price">desde 599€ <span>pago único</span></div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🤖</div>
+        <h3>Agente de IA</h3>
+        <p>Asistente inteligente para tu web que responde clientes, gestiona reservas o cualifica leads automáticamente.</p>
+        <div class="service-price">desde 800€ <span>pago único</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ WHY US ═════════════════════════════════════════════ -->
+<section id="why">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Por qué nosotros</span>
+      <h2 class="section-title">Sin agencias lentas, sin presupuestos inflados</h2>
+      <p class="section-sub">Trabajamos directo, rápido y con resultados medibles desde el primer mes.</p>
+    </div>
+    <div class="why-grid">
+
+      <div class="why-card">
+        <div class="why-number">48h</div>
+        <h3>Entrega rápida</h3>
+        <p>Tu web lista en 48 a 72 horas desde que nos das el visto bueno. Sin esperar semanas ni meses.</p>
+      </div>
+
+      <div class="why-card">
+        <div class="why-number">1:1</div>
+        <h3>Trato directo</h3>
+        <p>Siempre hablas con la misma persona, no con un call center. Te explicamos todo con palabras normales.</p>
+      </div>
+
+      <div class="why-card">
+        <div class="why-number">+%</div>
+        <h3>Resultados medibles</h3>
+        <p>Informe mensual con visitas, posiciones en Google y rendimiento de redes. Sabes exactamente qué pasa.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ HOW IT WORKS ══════════════════════════════════════ -->
+<section id="process">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Cómo funciona</span>
+      <h2 class="section-title">Del primer contacto a tu negocio online en 4 pasos</h2>
+      <p class="section-sub">Un proceso claro y sin complicaciones.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Hablamos</h3>
+        <p>Cuéntanos tu negocio y qué necesitas. Por WhatsApp, email o llamada — como prefieras.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Presupuesto cerrado</h3>
+        <p>En 24h te enviamos una propuesta con precio fijo. Sin sorpresas ni costes ocultos.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Manos a la obra</h3>
+        <p>Empezamos de inmediato. Te mantenemos informado en cada paso del proceso.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h3>Entrega y soporte</h3>
+        <p>Tu proyecto listo en el plazo acordado, con soporte incluido los primeros 30 días.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CTA BAND ══════════════════════════════════════════ -->
+<section id="cta-band">
+  <div class="container">
+    <h2>¿Tu negocio merece estar en internet?</h2>
+    <p>Primera consulta gratuita. Sin compromiso. Respuesta en menos de 24h.</p>
+    <a href="#contact" class="btn btn-white">Pedir presupuesto gratis</a>
+  </div>
+</section>
+
+<!-- ══ CONTACT ═══════════════════════════════════════════ -->
+<section id="contact">
+  <div class="container">
+
+    <div>
+      <span class="section-label">Contacto</span>
+      <h2>Hablemos de tu proyecto</h2>
+      <p class="lead">Respuesta garantizada en menos de 24 horas. Cuéntanos qué necesitas y te enviamos presupuesto sin compromiso.</p>
+
+      <div class="contact-items">
+        <div class="contact-item">
+          <div class="contact-item-icon">✉</div>
+          <div class="contact-item-text">
+            <strong>Email</strong>
+            <span>clickiclickweb@gmail.com</span>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">📲</div>
+          <div class="contact-item-text">
+            <strong>WhatsApp</strong>
+            <span>+34 722 753 559</span>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">⏱</div>
+          <div class="contact-item-text">
+            <strong>Respuesta en</strong>
+            <span>Menos de 24 horas</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <form class="contact-form"
+          action="https://formspree.io/f/YOUR_FORM_ID"
+          method="POST">
+      <input type="text"  name="nombre"  placeholder="Tu nombre y negocio" required>
+      <input type="email" name="email"   placeholder="Tu email" required>
+      <input type="tel"   name="telefono" placeholder="Teléfono (opcional)">
+      <textarea name="mensaje" placeholder="¿Qué necesitas? Cuéntanos brevemente..." required></textarea>
+      <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+    </form>
+
+  </div>
+</section>
+
+<!-- ══ FOOTER ════════════════════════════════════════════ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <span>CLICKI</span><span>CLICK</span>
+    </div>
+    <p>© 2026 CLICKICLICK · Agencia Digital · España</p>
+    <p>clickiclickweb@gmail.com</p>
+  </div>
+</footer>
+
+<script>
+  // Smooth active state on nav links
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        navLinks.forEach(a => {
+          a.style.color = a.getAttribute('href') === '#' + e.target.id
+            ? '#ffffff' : '';
+        });
+      }
+    });
+  }, { threshold: 0.4 });
+
+  sections.forEach(s => observer.observe(s));
+
+  // Contact form feedback
+  const form = document.querySelector('.contact-form');
+  if (form) {
+    form.addEventListener('submit', async e => {
+      e.preventDefault();
+      const btn = form.querySelector('button[type=submit]');
+      const original = btn.textContent;
+      btn.textContent = 'Enviando...';
+      btn.disabled = true;
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { Accept: 'application/json' }
+        });
+        if (res.ok) {
+          btn.textContent = 'Mensaje enviado';
+          btn.style.background = '#38a169';
+          form.reset();
+        } else {
+          throw new Error();
+        }
+      } catch {
+        btn.textContent = original;
+        btn.disabled = false;
+        alert('Error al enviar. Escríbenos directamente a clickiclickweb@gmail.com');
+      }
+    });
+  }
+</script>
+</body>
+</html>
