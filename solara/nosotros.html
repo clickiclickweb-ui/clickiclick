@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nosotros — Solara Inmobiliaria</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--green:#1B4332;--gold:#C9A227;--bg:#FAFAF5;--dark:#1a1a1a;--dim:#666;--t:all .3s cubic-bezier(.16,1,.3,1)}
+body{font-family:'DM Sans',sans-serif;color:var(--dark);background:var(--bg);line-height:1.6}
+h1,h2,h3{font-family:'Playfair Display',serif;font-weight:700}
+a{text-decoration:none;color:inherit}
+nav{position:sticky;top:0;z-index:100;background:rgba(250,250,245,.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(27,67,50,.08);padding:0 5vw;display:flex;align-items:center;justify-content:space-between;height:64px}
+nav .logo{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--green)}
+nav .logo span{color:var(--gold)}
+.back{font-size:.85rem;color:var(--dim);transition:var(--t)}
+.back:hover{color:var(--gold)}
+.hero{background:var(--green);color:#fff;padding:100px 5vw 80px;text-align:center}
+.hero h1{font-size:clamp(2rem,4vw,3rem);margin-bottom:1rem}
+.hero p{color:rgba(255,255,255,.7);max-width:600px;margin:0 auto}
+section{padding:80px 5vw;max-width:1000px;margin:0 auto}
+.story{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.story p{color:var(--dim);margin-bottom:1rem;line-height:1.8}
+.story-img{height:400px;background:linear-gradient(135deg,var(--green),var(--gold));display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:3rem;color:rgba(255,255,255,.15);font-weight:700}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;margin-top:3rem;padding-top:3rem;border-top:1px solid rgba(27,67,50,.08)}
+.stat{text-align:center}
+.stat strong{display:block;font-size:2.2rem;color:var(--green);font-family:'Playfair Display',serif}
+.stat span{font-size:.75rem;color:var(--dim);text-transform:uppercase;letter-spacing:1px}
+.values{margin-top:3rem}
+.value{display:grid;grid-template-columns:auto 1fr;gap:1.5rem;padding:1.5rem 0;border-bottom:1px solid rgba(27,67,50,.06)}
+.value-num{font-family:'Playfair Display',serif;font-size:2rem;color:var(--gold);opacity:.4;line-height:1}
+.value h4{margin-bottom:.3rem}
+.value p{font-size:.9rem;color:var(--dim)}
+.team-section{background:rgba(27,67,50,.03)}
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+.team-card{background:#fff;padding:2.5rem 1.5rem;text-align:center;border:1px solid rgba(27,67,50,.05);transition:var(--t)}
+.team-card:hover{box-shadow:0 8px 32px rgba(27,67,50,.08)}
+.team-av{width:72px;height:72px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:#fff;margin:0 auto 1.2rem}
+.team-name{font-family:'Playfair Display',serif;font-size:1.15rem;margin-bottom:.3rem}
+.team-role{font-size:.8rem;color:var(--gold);font-weight:600;margin-bottom:1rem}
+.team-bio{font-size:.85rem;color:var(--dim);line-height:1.7}
+.cta-section{background:var(--green);color:#fff;padding:80px 5vw;text-align:center}
+.cta-section h2{color:#fff;margin-bottom:1rem}
+.cta-section p{color:rgba(255,255,255,.7);max-width:500px;margin:0 auto 2rem}
+.cta-btn{display:inline-block;background:var(--gold);color:var(--green);padding:.85rem 2.5rem;font-weight:700;transition:var(--t)}
+.cta-btn:hover{background:#fff}
+footer{padding:2rem 5vw;background:#0f2b1e;color:rgba(255,255,255,.5);display:flex;justify-content:space-between;font-size:.8rem;flex-wrap:wrap;gap:1rem}
+footer a{color:var(--gold)}
+@media(max-width:768px){
+  .story{grid-template-columns:1fr}
+  .story-img{height:200px}
+  .stats{grid-template-columns:1fr 1fr}
+  .team-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<nav>
+  <a href="./" class="logo">Solara <span>Inmobiliaria</span></a>
+  <a href="./" class="back">&larr; Volver al inicio</a>
+</nav>
+<div class="hero">
+  <h1>Más de 15 años haciendo que<br>las familias encuentren su hogar</h1>
+  <p>Somos un equipo pequeño con presencia internacional. Cada cliente recibe atención directa, sin intermediarios ni esperas.</p>
+</div>
+<section>
+  <div class="story">
+    <div>
+      <h2 style="color:var(--green);margin-bottom:1.5rem">Nuestra historia</h2>
+      <p>Solara Inmobiliaria nació en Marbella en 2009 con una idea sencilla: que encontrar hogar no debería ser un proceso estresante. Elena Solara, nuestra fundadora, dejó una carrera en banca privada para dedicarse a lo que realmente le apasionaba: conectar personas con espacios donde construir su vida.</p>
+      <p>Quince años después, seguimos fieles a ese principio. Nos hemos expandido a cinco países manteniendo lo que nos hace diferentes: un equipo reducido donde cada agente conoce personalmente a cada cliente y cada propiedad que gestiona.</p>
+      <p>No trabajamos con cientos de propiedades. Trabajamos con las correctas. Cada una pasa por un proceso de selección antes de entrar en nuestro catálogo. Así garantizamos que lo que te mostramos merece tu tiempo.</p>
+    </div>
+    <div class="story-img">S</div>
+  </div>
+  <div class="stats">
+    <div class="stat"><strong>+200</strong><span>Familias felices</span></div>
+    <div class="stat"><strong>5</strong><span>Países</span></div>
+    <div class="stat"><strong>15</strong><span>Años de experiencia</span></div>
+    <div class="stat"><strong>97%</strong><span>Clientes recomiendan</span></div>
+  </div>
+  <div class="values">
+    <h3 style="color:var(--green);margin-bottom:1.5rem">Lo que nos mueve</h3>
+    <div class="value"><div class="value-num">01</div><div><h4>Honestidad radical</h4><p>Si una propiedad no te conviene, te lo decimos. Prefirimos perder una venta que tu confianza.</p></div></div>
+    <div class="value"><div class="value-num">02</div><div><h4>Atención sin filtros</h4><p>Hablas directamente con tu agente, siempre. No hay centralitas, ni asistentes, ni respuestas genéricas.</p></div></div>
+    <div class="value"><div class="value-num">03</div><div><h4>Conocimiento local real</h4><p>Nuestros agentes viven en las zonas donde operan. Conocen cada barrio, cada calle, cada detalle que no sale en los portales.</p></div></div>
+    <div class="value"><div class="value-num">04</div><div><h4>Presencia internacional, trato personal</h4><p>Operamos en cinco países pero seguimos siendo un equipo donde todos nos conocemos. Eso se nota en cada interacción.</p></div></div>
+  </div>
+</section>
+<section class="team-section">
+  <h2 style="text-align:center;color:var(--green);margin-bottom:.5rem">Conoce al equipo</h2>
+  <p style="text-align:center;color:var(--dim);margin-bottom:2.5rem">Las personas detrás de cada operación.</p>
+  <div class="team-grid">
+    <div class="team-card">
+      <div class="team-av">ES</div>
+      <div class="team-name">Elena Solara</div>
+      <div class="team-role">Fundadora y Directora</div>
+      <p class="team-bio">Con más de 15 años en el sector inmobiliario y formación en banca privada, Elena fundó Solara con la misión de humanizar un sector que a menudo olvida que detrás de cada operación hay una familia buscando hogar.</p>
+    </div>
+    <div class="team-card">
+      <div class="team-av" style="background:var(--gold)">MR</div>
+      <div class="team-name">Miguel Ángel Reyes</div>
+      <div class="team-role">Agente Senior — Costa del Sol</div>
+      <p class="team-bio">Especialista en propiedades de lujo en la Costa del Sol. Miguel Ángel aporta un profundo conocimiento del mercado local y una red de contactos que garantiza las mejores condiciones para cada operación.</p>
+    </div>
+    <div class="team-card">
+      <div class="team-av" style="background:#2d6a4f">LF</div>
+      <div class="team-name">Lucía Fernández</div>
+      <div class="team-role">Coordinadora Comercial</div>
+      <p class="team-bio">Lucía es el primer contacto de cada cliente. Su dedicación al detalle y su capacidad para entender exactamente lo que buscas hacen que el proceso sea fluido desde la primera llamada.</p>
+    </div>
+  </div>
+</section>
+<div class="cta-section">
+  <h2>¿Buscas tu próximo hogar?</h2>
+  <p>Cuéntanos qué necesitas y te ayudamos a encontrarlo. Sin compromiso, sin presión.</p>
+  <a href="./#contacto" class="cta-btn">Contactar con nosotros &rarr;</a>
+</div>
+<footer>
+  <div>&copy; 2026 Solara Inmobiliaria</div>
+  <div><a href="../">Diseñado por CLICKICLICK</a></div>
+</footer>
+</body>
+</html>

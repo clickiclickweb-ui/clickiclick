@@ -3,359 +3,360 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Solara Inmobiliaria — Tu nuevo hogar te esta esperando</title>
+<title>Solara Inmobiliaria — Tu nuevo hogar te está esperando</title>
+<meta name="description" content="Propiedades exclusivas en España y Latinoamérica. Encuentra tu hogar ideal con Solara Inmobiliaria.">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--green:#1B4332;--gold:#C9A227;--bg:#FAFAF5;--dark:#1a1a1a;--t:all .3s cubic-bezier(.16,1,.3,1)}
+:root{--green:#1B4332;--green2:#2d6a4f;--gold:#C9A227;--bg:#FAFAF5;--dark:#1a1a1a;--dim:#666;--border:rgba(27,67,50,.08);--t:all .3s cubic-bezier(.16,1,.3,1)}
 html{scroll-behavior:smooth}
 body{font-family:'DM Sans',sans-serif;color:var(--dark);background:var(--bg);line-height:1.6}
 h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:700}
 a{text-decoration:none;color:inherit}
-img{display:block;width:100%;height:100%;object-fit:cover}
-.reveal{opacity:0;transform:translateY(32px);transition:opacity .7s ease,transform .7s ease}
-.reveal.visible{opacity:1;transform:none}
+img{display:block;max-width:100%}
 
-/* NAV */
-nav{position:fixed;top:0;left:0;width:100%;z-index:100;background:rgba(250,250,245,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(27,67,50,.08);padding:0 5vw;display:flex;align-items:center;justify-content:space-between;height:64px}
-nav .logo{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--green);letter-spacing:.5px}
+nav{position:fixed;top:0;left:0;width:100%;z-index:100;background:rgba(250,250,245,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 5vw;display:flex;align-items:center;justify-content:space-between;height:64px}
+nav .logo{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--green)}
 nav .logo span{color:var(--gold)}
-nav ul{list-style:none;display:flex;gap:2rem;align-items:center}
-nav ul a{font-size:.875rem;font-weight:500;color:var(--dark);transition:var(--t)}
-nav ul a:hover{color:var(--gold)}
-nav .cta-phone{background:var(--green);color:#fff;padding:.5rem 1.2rem;border-radius:6px;font-size:.8rem;font-weight:600;transition:var(--t)}
-nav .cta-phone:hover{background:var(--gold);color:var(--green)}
+.nav-links{list-style:none;display:flex;gap:2rem;align-items:center}
+.nav-links a{font-size:.875rem;font-weight:500;color:var(--dark);transition:var(--t)}
+.nav-links a:hover{color:var(--gold)}
+.nav-cta{background:var(--green);color:#fff;padding:.5rem 1.2rem;font-size:.8rem;font-weight:600;transition:var(--t)}
+.nav-cta:hover{background:var(--gold);color:var(--green)}
 .menu-btn{display:none;background:none;border:none;font-size:1.5rem;color:var(--green);cursor:pointer}
 
-/* HERO */
-.hero{min-height:100vh;padding:120px 5vw 80px;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;background:linear-gradient(135deg,#FAFAF5 50%,rgba(27,67,50,.04) 50%)}
+.hero{min-height:100vh;padding:120px 5vw 80px;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;background:linear-gradient(135deg,var(--bg) 50%,rgba(27,67,50,.04) 50%)}
 .hero-text h1{font-size:clamp(2.2rem,5vw,3.6rem);color:var(--green);line-height:1.15;margin-bottom:1.2rem}
-.hero-text h1 span{color:var(--gold);display:block}
-.hero-text p{font-size:1.05rem;color:#555;max-width:480px;margin-bottom:2rem}
-.search-box{background:#fff;border-radius:12px;padding:1.5rem;box-shadow:0 8px 40px rgba(27,67,50,.1);display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
-.search-box select,.search-box button{padding:.75rem 1rem;border:1px solid #e0ddd4;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:.875rem;background:#fff;color:var(--dark);appearance:none;cursor:pointer}
-.search-box button{grid-column:1/-1;background:var(--green);color:#fff;border:none;font-weight:600;transition:var(--t)}
+.hero-text h1 em{color:var(--gold);font-style:normal;display:block}
+.hero-text p{font-size:1.05rem;color:var(--dim);max-width:480px;margin-bottom:2rem}
+.search-box{background:#fff;padding:1.5rem;box-shadow:0 8px 40px rgba(27,67,50,.1);display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+.search-box select,.search-box button{padding:.75rem 1rem;border:1px solid #e0ddd4;font-family:'DM Sans',sans-serif;font-size:.875rem;background:#fff;color:var(--dark);appearance:none;cursor:pointer;transition:var(--t)}
+.search-box select:focus{border-color:var(--gold);outline:none}
+.search-box button{grid-column:1/-1;background:var(--green);color:#fff;border:none;font-weight:600}
 .search-box button:hover{background:var(--gold);color:var(--green)}
-.hero-visual{position:relative;height:480px;border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(27,67,50,.15)}
-.hero-visual::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(27,67,50,.25),transparent 50%);pointer-events:none}
-.hero-stat{position:absolute;bottom:1.5rem;left:1.5rem;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);padding:.75rem 1.2rem;border-radius:8px;font-size:.8rem}
+.hero-visual{position:relative;height:480px;overflow:hidden;box-shadow:0 20px 60px rgba(27,67,50,.15)}
+.hero-visual img{width:100%;height:100%;object-fit:cover}
+.hero-visual::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(27,67,50,.3),transparent 50%)}
+.hero-stat{position:absolute;bottom:1.5rem;left:1.5rem;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);padding:.75rem 1.2rem;font-size:.8rem;z-index:2}
 .hero-stat strong{display:block;font-size:1.4rem;color:var(--green);font-family:'Playfair Display',serif}
 
-/* SECTION COMMON */
 section{padding:80px 5vw}
 .section-label{text-transform:uppercase;font-size:.75rem;font-weight:600;letter-spacing:2px;color:var(--gold);margin-bottom:.5rem}
 .section-title{font-size:clamp(1.6rem,3vw,2.4rem);color:var(--green);margin-bottom:1rem}
-.section-sub{color:#666;max-width:560px;margin-bottom:3rem}
+.section-sub{color:var(--dim);max-width:560px;margin-bottom:2rem}
 
-/* PROPERTIES GRID */
+.filter-bar{display:flex;gap:.75rem;margin-bottom:2rem;flex-wrap:wrap}
+.filter-bar select{padding:.6rem 1rem;border:1px solid #e0ddd4;font-family:'DM Sans',sans-serif;font-size:.85rem;background:#fff;color:var(--dark);appearance:none;cursor:pointer;transition:var(--t);min-width:150px}
+.filter-bar select:focus{border-color:var(--gold);outline:none}
+
 .props-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
-.prop-card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.06);transition:var(--t);position:relative}
-.prop-card:hover{transform:translateY(-6px);box-shadow:0 12px 40px rgba(27,67,50,.12)}
-.prop-card:nth-child(1){grid-row:span 2}
-.prop-card:nth-child(1) .prop-img{height:100%}
+.prop-card{background:#fff;overflow:hidden;box-shadow:0 2px 16px rgba(0,0,0,.05);transition:var(--t);position:relative}
+.prop-card:hover{transform:translateY(-4px);box-shadow:0 8px 32px rgba(27,67,50,.1)}
+.prop-card.hidden{display:none}
 .prop-img{height:220px;position:relative;overflow:hidden}
-.prop-img img{transition:var(--t)}
-.prop-card:hover .prop-img img{transform:scale(1.05)}
-.prop-price{position:absolute;top:1rem;right:1rem;background:var(--gold);color:#fff;font-weight:700;padding:.35rem .75rem;border-radius:6px;font-size:.875rem}
-.prop-loc{position:absolute;bottom:1rem;left:1rem;background:rgba(27,67,50,.85);color:#fff;padding:.25rem .6rem;border-radius:4px;font-size:.75rem;font-weight:500}
-.prop-info{padding:1.2rem 1.2rem 1rem}
-.prop-info h3{font-size:1.05rem;margin-bottom:.4rem;color:var(--green)}
-.prop-meta{display:flex;gap:1rem;font-size:.8rem;color:#888;margin-bottom:.75rem}
-.prop-meta span{display:flex;align-items:center;gap:.25rem}
-.prop-link{font-size:.8rem;font-weight:600;color:var(--gold);transition:var(--t);display:inline-flex;align-items:center;gap:.3rem}
-.prop-link:hover{color:var(--green)}
+.prop-img img{width:100%;height:100%;object-fit:cover;transition:var(--t)}
+.prop-card:hover .prop-img img{transform:scale(1.04)}
+.prop-price{position:absolute;top:1rem;right:1rem;background:var(--gold);color:#fff;font-weight:700;padding:.35rem .75rem;font-size:.875rem}
+.prop-loc{position:absolute;bottom:1rem;left:1rem;background:rgba(27,67,50,.85);color:#fff;padding:.25rem .6rem;font-size:.75rem;font-weight:500}
+.prop-badge{position:absolute;top:1rem;left:1rem;padding:.2rem .6rem;font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em}
+.prop-badge.nuevo{background:#16a34a;color:#fff}
+.prop-badge.rebajado{background:#dc2626;color:#fff}
+.prop-badge.favorito{background:var(--gold);color:#fff}
+.prop-info{padding:1.2rem}
+.prop-info h3{font-size:1.1rem;margin-bottom:.4rem}
+.prop-meta{display:flex;gap:1rem;font-size:.8rem;color:var(--dim);margin-bottom:.75rem}
+.prop-country{font-size:.75rem;color:var(--gold);font-weight:600;margin-bottom:.5rem}
+.prop-link{font-size:.8rem;font-weight:600;color:var(--green);display:inline-flex;align-items:center;gap:.4rem;transition:var(--t)}
+.prop-link:hover{color:var(--gold);gap:.7rem}
+.no-results{display:none;text-align:center;padding:3rem;color:var(--dim);font-size:1rem}
+.no-results.show{display:block}
 
-/* DETAIL */
-.detail{background:#fff}
-.detail-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:start}
-.detail-img{height:420px;border-radius:12px;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,.1)}
-.detail-body h2{margin-bottom:1rem}
-.detail-body p{color:#555;margin-bottom:1rem;font-size:.95rem}
-.feat-grid{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin:1.5rem 0}
-.feat-item{display:flex;align-items:center;gap:.5rem;font-size:.85rem;color:var(--green);font-weight:500;padding:.6rem .8rem;background:rgba(27,67,50,.05);border-radius:8px}
-.feat-item::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--gold);flex-shrink:0}
-.agent-card{display:flex;gap:1rem;align-items:center;background:rgba(27,67,50,.04);border-radius:10px;padding:1rem;margin-top:1.5rem}
-.agent-avatar{width:56px;height:56px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-weight:700;font-size:1.1rem;flex-shrink:0}
-.agent-info{font-size:.85rem}
-.agent-info strong{display:block;color:var(--green);font-size:.95rem}
-.agent-info span{color:#888}
+.vender-cta{padding:80px 5vw;background:var(--green);color:#fff;text-align:center}
+.vender-cta h2{color:#fff;margin-bottom:1rem}
+.vender-cta p{color:rgba(255,255,255,.7);max-width:500px;margin:0 auto 2rem}
+.vender-btn{display:inline-block;background:var(--gold);color:var(--green);padding:.85rem 2rem;font-weight:700;font-size:.9rem;transition:var(--t)}
+.vender-btn:hover{background:#fff}
 
-/* CONTACT FORM (shared) */
-.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-top:1.5rem}
-.form-grid input,.form-grid textarea{padding:.75rem 1rem;border:1px solid #e0ddd4;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:.875rem;background:var(--bg);transition:var(--t)}
-.form-grid input:focus,.form-grid textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,162,39,.12)}
-.form-grid textarea{grid-column:1/-1;resize:vertical;min-height:80px}
-.form-grid .btn{grid-column:1/-1;background:var(--green);color:#fff;border:none;padding:.85rem;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:.9rem;font-weight:600;cursor:pointer;transition:var(--t)}
-.form-grid .btn:hover{background:var(--gold);color:var(--green)}
+.about-mini{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.about-text h2{margin-bottom:1rem}
+.about-text p{color:var(--dim);margin-bottom:1rem}
+.about-stats{display:flex;gap:2rem;margin-top:1.5rem}
+.about-stat strong{display:block;font-size:1.8rem;color:var(--green);font-family:'Playfair Display',serif}
+.about-stat span{font-size:.75rem;color:var(--dim);text-transform:uppercase;letter-spacing:1px}
 
-/* TEAM */
-.team-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
-.team-grid .team-card:first-child{grid-column:1/-1;display:grid;grid-template-columns:auto 1fr;gap:1.5rem;align-items:center;background:#fff;padding:2rem;border-radius:12px;box-shadow:0 4px 24px rgba(0,0,0,.05)}
-.team-card{background:#fff;padding:1.5rem;border-radius:12px;box-shadow:0 4px 24px rgba(0,0,0,.05);transition:var(--t)}
-.team-card:hover{transform:translateY(-4px);box-shadow:0 8px 30px rgba(27,67,50,.1)}
-.team-avatar{width:72px;height:72px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-weight:700;font-size:1.3rem;margin-bottom:1rem;flex-shrink:0}
-.team-card h3{color:var(--green);font-size:1.1rem;margin-bottom:.2rem}
-.team-card .role{font-size:.8rem;color:var(--gold);font-weight:600;margin-bottom:.6rem;display:block}
-.team-card p{font-size:.875rem;color:#666;line-height:1.5}
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2rem}
+.team-card{text-align:center;padding:2rem 1rem}
+.team-av{width:64px;height:64px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:#fff;margin:0 auto 1rem}
+.team-name{font-size:1rem;font-weight:700}
+.team-role{font-size:.8rem;color:var(--dim);margin-top:.2rem}
 
-/* WHY */
-.why-section{background:var(--green);color:#fff;border-radius:20px;margin:0 5vw;padding:60px}
-.why-section .section-label{color:var(--gold)}
-.why-section .section-title{color:#fff}
-.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
-.why-item{padding:1.5rem;border:1px solid rgba(255,255,255,.12);border-radius:12px;transition:var(--t)}
-.why-item:hover{background:rgba(255,255,255,.08);border-color:var(--gold)}
-.why-num{font-family:'Playfair Display',serif;font-size:2rem;color:var(--gold);font-weight:700;line-height:1;margin-bottom:.5rem}
-.why-item h4{font-size:1rem;margin-bottom:.4rem}
-.why-item p{font-size:.85rem;color:rgba(255,255,255,.7);line-height:1.5}
+.contact-section{background:var(--green);color:#fff}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+.contact-grid h2{color:#fff}
+.contact-grid p{color:rgba(255,255,255,.7)}
+.contact-dato{display:flex;align-items:center;gap:.75rem;margin-top:1rem;font-size:.9rem;color:rgba(255,255,255,.8)}
+.contact-form input,.contact-form textarea{width:100%;padding:.75rem 1rem;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.06);color:#fff;font-family:'DM Sans',sans-serif;font-size:.9rem;margin-bottom:.75rem;outline:none;transition:var(--t)}
+.contact-form input::placeholder,.contact-form textarea::placeholder{color:rgba(255,255,255,.35)}
+.contact-form input:focus,.contact-form textarea:focus{border-color:var(--gold)}
+.contact-form textarea{min-height:100px;resize:vertical}
+.contact-form button{background:var(--gold);color:var(--green);border:none;padding:.85rem 2rem;font-family:'DM Sans',sans-serif;font-weight:700;font-size:.9rem;cursor:pointer;transition:var(--t);width:100%}
+.contact-form button:hover{background:#fff}
 
-/* CTA / CONTACT */
-.contact-section{background:linear-gradient(160deg,rgba(27,67,50,.03),rgba(201,162,39,.05))}
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
-.contact-info h3{color:var(--green);font-size:1.3rem;margin-bottom:1rem}
-.contact-line{display:flex;gap:.75rem;align-items:flex-start;margin-bottom:1rem;font-size:.9rem;color:#555}
-.contact-line strong{color:var(--dark);display:block;margin-bottom:.1rem}
-.contact-dot{width:10px;height:10px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:6px}
-
-/* FOOTER */
-footer{background:var(--green);color:rgba(255,255,255,.75);padding:40px 5vw;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;font-size:.8rem}
-footer .logo{font-family:'Playfair Display',serif;font-size:1.2rem;color:#fff;font-weight:700}
-footer .logo span{color:var(--gold)}
+footer{padding:3rem 5vw;background:#0f2b1e;color:rgba(255,255,255,.5);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;font-size:.8rem}
 footer a{color:var(--gold);transition:var(--t)}
 footer a:hover{color:#fff}
-footer .foot-links{display:flex;gap:1.5rem}
 
-/* RESPONSIVE */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.reveal.vis{opacity:1;transform:none}
+
 @media(max-width:768px){
-.menu-btn{display:block}
-nav ul{position:fixed;top:64px;right:-100%;width:260px;height:calc(100vh - 64px);background:var(--bg);flex-direction:column;padding:2rem;gap:1.5rem;transition:var(--t);box-shadow:-4px 0 20px rgba(0,0,0,.08)}
-nav ul.open{right:0}
-.hero{grid-template-columns:1fr;padding-top:100px;gap:2rem}
-.hero-visual{height:280px}
-.search-box{grid-template-columns:1fr}
-.props-grid{grid-template-columns:1fr}
-.prop-card:nth-child(1){grid-row:auto}
-.prop-card:nth-child(1) .prop-img{height:220px}
-.detail-grid{grid-template-columns:1fr}
-.detail-img{height:240px}
-.team-grid{grid-template-columns:1fr}
-.team-grid .team-card:first-child{grid-template-columns:1fr;text-align:center;justify-items:center}
-.why-section{margin:0;border-radius:0;padding:40px 5vw}
-.why-grid{grid-template-columns:1fr}
-.contact-grid{grid-template-columns:1fr}
-.form-grid{grid-template-columns:1fr}
-.feat-grid{grid-template-columns:1fr}
-footer{flex-direction:column;text-align:center}
+  .hero{grid-template-columns:1fr;min-height:auto}
+  .hero-visual{height:280px}
+  .search-box{grid-template-columns:1fr}
+  .props-grid{grid-template-columns:1fr}
+  .about-mini{grid-template-columns:1fr;gap:2rem}
+  .team-grid{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr;gap:2rem}
+  nav .nav-links{display:none}
+  .menu-btn{display:block}
+  .filter-bar{flex-direction:column}
+  .filter-bar select{width:100%}
 }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
-  <a href="#" class="logo">Solara<span>.</span></a>
-  <button class="menu-btn" onclick="document.querySelector('nav ul').classList.toggle('open')" aria-label="Menu">&#9776;</button>
-  <ul>
-    <li><a href="#propiedades" onclick="this.closest('ul').classList.remove('open')">Propiedades</a></li>
-    <li><a href="#nosotros" onclick="this.closest('ul').classList.remove('open')">Nosotros</a></li>
-    <li><a href="#contacto" onclick="this.closest('ul').classList.remove('open')">Contacto</a></li>
-    <li><a href="tel:+34951234567" class="cta-phone">+34 951 234 567</a></li>
+  <a href="./" class="logo">Solara <span>Inmobiliaria</span></a>
+  <ul class="nav-links">
+    <li><a href="#propiedades">Propiedades</a></li>
+    <li><a href="./nosotros.html">Nosotros</a></li>
+    <li><a href="./vender.html">Vender</a></li>
+    <li><a href="#contacto">Contacto</a></li>
   </ul>
+  <a href="#contacto" class="nav-cta">+34 951 234 567</a>
+  <button class="menu-btn" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-text">
-    <h1>Tu nuevo hogar <span>te esta esperando</span></h1>
-    <p>Descubre propiedades exclusivas en las mejores ubicaciones de Espana. En Solara Inmobiliaria te acompanamos en cada paso hacia tu hogar ideal.</p>
+    <h1>Tu nuevo hogar<em>te está esperando</em></h1>
+    <p>Propiedades exclusivas en España y Latinoamérica. Te acompañamos en cada paso hacia tu hogar ideal.</p>
     <div class="search-box">
-      <select><option>Ubicacion</option><option>Marbella</option><option>Valencia</option><option>Sevilla</option><option>Madrid</option><option>Malaga</option><option>Alicante</option></select>
-      <select><option>Tipo de propiedad</option><option>Villa</option><option>Atico</option><option>Apartamento</option><option>Chalet</option><option>Casa adosada</option></select>
-      <select><option>Precio minimo</option><option>100.000</option><option>200.000</option><option>300.000</option></select>
-      <select><option>Precio maximo</option><option>300.000</option><option>500.000</option><option>700.000</option></select>
-      <button type="button">Buscar propiedades</button>
+      <select id="heroType"><option value="">Tipo de propiedad</option><option>Villa</option><option>Ático</option><option>Apartamento</option><option>Chalet</option><option>Casa</option><option>Piso</option><option>Departamento</option></select>
+      <select id="heroCountry"><option value="">País</option><option>España</option><option>México</option><option>Argentina</option><option>Colombia</option><option>Chile</option></select>
+      <select id="heroBeds"><option value="">Habitaciones</option><option>1+</option><option>2+</option><option>3+</option><option>4+</option></select>
+      <select id="heroPrice"><option value="">Precio</option><option value="low">Hasta 250.000</option><option value="mid">250.000 - 500.000</option><option value="high">Más de 500.000</option></select>
+      <button type="button" onclick="applyFilters()">Buscar propiedades</button>
     </div>
   </div>
   <div class="hero-visual">
     <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&q=80" alt="Villa de lujo con piscina">
-    <div class="hero-stat"><strong>+200</strong>familias nos eligieron</div>
+    <div class="hero-stat"><strong>+200</strong>familias encontraron su hogar</div>
   </div>
 </section>
 
-<!-- PROPERTIES -->
 <section id="propiedades">
-  <div class="reveal">
-    <div class="section-label">Seleccion exclusiva</div>
-    <h2 class="section-title">Propiedades destacadas</h2>
-    <p class="section-sub">Una seleccion cuidada de los mejores inmuebles disponibles en las ubicaciones mas deseadas de Espana.</p>
-  </div>
-  <div class="props-grid">
-    <div class="prop-card reveal">
-      <div class="prop-img"><img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=600&q=80" alt="Villa Mediterranea"><span class="prop-price">485.000 EUR</span><span class="prop-loc">Marbella</span></div>
-      <div class="prop-info"><h3>Villa Mediterranea</h3><div class="prop-meta"><span>4 hab</span><span>3 banos</span><span>285 m2</span></div><a href="#detalle" class="prop-link">Ver propiedad &#8594;</a></div>
-    </div>
-    <div class="prop-card reveal">
-      <div class="prop-img"><img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&q=80" alt="Atico con vistas al mar"><span class="prop-price">325.000 EUR</span><span class="prop-loc">Valencia</span></div>
-      <div class="prop-info"><h3>Atico con vistas al mar</h3><div class="prop-meta"><span>3 hab</span><span>2 banos</span><span>140 m2</span></div><a href="#" class="prop-link">Ver propiedad &#8594;</a></div>
-    </div>
-    <div class="prop-card reveal">
-      <div class="prop-img"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80" alt="Casa adosada familiar"><span class="prop-price">275.000 EUR</span><span class="prop-loc">Sevilla</span></div>
-      <div class="prop-info"><h3>Casa adosada familiar</h3><div class="prop-meta"><span>4 hab</span><span>2 banos</span><span>190 m2</span></div><a href="#" class="prop-link">Ver propiedad &#8594;</a></div>
-    </div>
-    <div class="prop-card reveal">
-      <div class="prop-img"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=80" alt="Apartamento centro historico"><span class="prop-price">195.000 EUR</span><span class="prop-loc">Malaga</span></div>
-      <div class="prop-info"><h3>Apartamento centro historico</h3><div class="prop-meta"><span>2 hab</span><span>1 bano</span><span>85 m2</span></div><a href="#" class="prop-link">Ver propiedad &#8594;</a></div>
-    </div>
-    <div class="prop-card reveal">
-      <div class="prop-img"><img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=600&q=80" alt="Chalet con piscina"><span class="prop-price">595.000 EUR</span><span class="prop-loc">Alicante</span></div>
-      <div class="prop-info"><h3>Chalet con piscina</h3><div class="prop-meta"><span>5 hab</span><span>3 banos</span><span>320 m2</span></div><a href="#" class="prop-link">Ver propiedad &#8594;</a></div>
-    </div>
-    <div class="prop-card reveal">
-      <div class="prop-img"><img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&q=80" alt="Piso reformado"><span class="prop-price">245.000 EUR</span><span class="prop-loc">Madrid</span></div>
-      <div class="prop-info"><h3>Piso reformado</h3><div class="prop-meta"><span>3 hab</span><span>2 banos</span><span>110 m2</span></div><a href="#" class="prop-link">Ver propiedad &#8594;</a></div>
-    </div>
-  </div>
-</section>
+  <p class="section-label">Propiedades destacadas</p>
+  <h2 class="section-title">Encuentra tu hogar ideal</h2>
+  <p class="section-sub">Propiedades seleccionadas en las mejores ubicaciones de España, México, Argentina, Colombia y Chile.</p>
 
-<!-- PROPERTY DETAIL -->
-<section class="detail" id="detalle">
-  <div class="reveal">
-    <div class="section-label">Propiedad destacada</div>
-    <h2 class="section-title">Villa Mediterranea</h2>
+  <div class="filter-bar">
+    <select id="filterType" onchange="applyFilters()"><option value="">Todos los tipos</option><option>Villa</option><option>Ático</option><option>Apartamento</option><option>Chalet</option><option>Casa</option><option>Piso</option><option>Departamento</option></select>
+    <select id="filterCountry" onchange="applyFilters()"><option value="">Todos los países</option><option>España</option><option>México</option><option>Argentina</option><option>Colombia</option><option>Chile</option></select>
+    <select id="filterBeds" onchange="applyFilters()"><option value="">Habitaciones</option><option value="1">1+</option><option value="2">2+</option><option value="3">3+</option><option value="4">4+</option></select>
   </div>
-  <div class="detail-grid reveal">
-    <div class="detail-img">
-      <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=900&q=80" alt="Villa Mediterranea vista principal">
-    </div>
-    <div class="detail-body">
-      <h2>Una residencia de ensueno en Marbella</h2>
-      <p>Situada en una de las zonas mas exclusivas de Marbella, esta villa mediterranea ofrece 285 metros cuadrados de espacios luminosos y elegantes. Con cuatro amplias habitaciones y tres banos completos, es el hogar perfecto para familias que buscan confort y distincion.</p>
-      <p>La propiedad cuenta con acabados de primera calidad, suelos de marmol en las zonas comunes y carpinteria de madera maciza. Grandes ventanales permiten la entrada de luz natural durante todo el dia, creando un ambiente calido y acogedor.</p>
-      <p>Su jardin privado con piscina infinity ofrece vistas panoramicas a la costa, convirtiendo cada dia en una experiencia unica. A solo diez minutos del centro de Marbella y con acceso directo a la autopista.</p>
-      <div class="feat-grid">
-        <div class="feat-item">Piscina infinity</div>
-        <div class="feat-item">Jardin privado</div>
-        <div class="feat-item">Garaje doble</div>
-        <div class="feat-item">Terraza panoramica</div>
-        <div class="feat-item">Cocina equipada</div>
-        <div class="feat-item">Aire acondicionado</div>
-        <div class="feat-item">Domomotica</div>
-        <div class="feat-item">Zona de barbacoa</div>
-      </div>
-      <div class="agent-card">
-        <div class="agent-avatar">ES</div>
-        <div class="agent-info"><strong>Elena Solara</strong><span>Fundadora y Directora</span><br><span>+34 951 234 567 | elena@solarainmobiliaria.es</span></div>
-      </div>
-      <h4 style="margin-top:2rem;color:var(--green)">Te interesa esta propiedad?</h4>
-      <form class="form-grid" onsubmit="return false">
-        <input type="text" placeholder="Tu nombre" required>
-        <input type="tel" placeholder="Telefono">
-        <input type="email" placeholder="Email" style="grid-column:1/-1" required>
-        <textarea placeholder="Me gustaria obtener mas informacion sobre la Villa Mediterranea..."></textarea>
-        <button type="submit" class="btn">Solicitar informacion</button>
-      </form>
-    </div>
-  </div>
-</section>
 
-<!-- TEAM -->
-<section id="nosotros">
-  <div class="reveal">
-    <div class="section-label">Nuestro equipo</div>
-    <h2 class="section-title">Conoce al equipo</h2>
-    <p class="section-sub">Profesionales apasionados por ayudarte a encontrar el hogar que mereces.</p>
-  </div>
-  <div class="team-grid">
-    <div class="team-card reveal">
-      <div class="team-avatar">ES</div>
-      <div>
-        <h3>Elena Solara</h3>
-        <span class="role">Fundadora y Directora</span>
-        <p>Con mas de 15 anos en el sector inmobiliario, Elena fundo Solara con una vision clara: ofrecer un servicio cercano, transparente y de la mas alta calidad. Su conocimiento del mercado y su dedicacion personal a cada cliente son la esencia de la agencia.</p>
+  <div class="props-grid" id="propsGrid">
+    <div class="prop-card reveal" data-type="Villa" data-country="España" data-beds="4" data-price="485000">
+      <div class="prop-img">
+        <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=600&q=80" alt="Villa Mediterránea">
+        <span class="prop-price">485.000 &euro;</span>
+        <span class="prop-loc">Marbella</span>
+      </div>
+      <div class="prop-info">
+        <div class="prop-country">España</div>
+        <h3>Villa Mediterránea</h3>
+        <div class="prop-meta"><span>4 hab</span><span>3 baños</span><span>285 m&sup2;</span></div>
+        <a class="prop-link" href="./propiedad.html?id=1" target="_blank">Ver propiedad &rarr;</a>
       </div>
     </div>
-    <div class="team-card reveal">
-      <div class="team-avatar">MR</div>
-      <h3>Miguel Angel Reyes</h3>
-      <span class="role">Agente Senior</span>
-      <p>Especialista en propiedades de lujo en la Costa del Sol, Miguel Angel aporta un profundo conocimiento del mercado local y una red de contactos inigualable. Su capacidad negociadora garantiza las mejores condiciones para cada operacion.</p>
+    <div class="prop-card reveal" data-type="Ático" data-country="España" data-beds="3" data-price="325000">
+      <div class="prop-img">
+        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&q=80" alt="Ático con vistas">
+        <span class="prop-price">325.000 &euro;</span>
+        <span class="prop-loc">Valencia</span>
+      </div>
+      <div class="prop-info">
+        <div class="prop-country">España</div>
+        <h3>Ático con vistas al mar</h3>
+        <div class="prop-meta"><span>3 hab</span><span>2 baños</span><span>140 m&sup2;</span></div>
+        <a class="prop-link" href="./propiedad.html?id=2" target="_blank">Ver propiedad &rarr;</a>
+      </div>
     </div>
-    <div class="team-card reveal">
-      <div class="team-avatar">LF</div>
-      <h3>Lucia Fernandez</h3>
-      <span class="role">Coordinadora Comercial</span>
-      <p>Su dedicacion al cliente hace que cada proceso de compra o venta sea una experiencia fluida y sin preocupaciones. Lucia se encarga de que cada detalle este cuidado, desde la primera visita hasta la firma ante notario.</p>
+    <div class="prop-card reveal" data-type="Casa" data-country="México" data-beds="5" data-price="625000">
+      <div class="prop-img">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80" alt="Residencia Polanco">
+        <span class="prop-price">$12.500.000 MXN</span>
+        <span class="prop-loc">CDMX, Polanco</span>
+        <span class="prop-badge nuevo">Nuevo</span>
+      </div>
+      <div class="prop-info">
+        <div class="prop-country">México</div>
+        <h3>Residencia en Polanco</h3>
+        <div class="prop-meta"><span>5 hab</span><span>4 baños</span><span>350 m&sup2;</span></div>
+        <a class="prop-link" href="./propiedad.html?id=3" target="_blank">Ver propiedad &rarr;</a>
+      </div>
+    </div>
+    <div class="prop-card reveal" data-type="Departamento" data-country="Argentina" data-beds="2" data-price="128000">
+      <div class="prop-img">
+        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&q=80" alt="Departamento Palermo">
+        <span class="prop-price">USD 128.000</span>
+        <span class="prop-loc">Buenos Aires, Palermo</span>
+      </div>
+      <div class="prop-info">
+        <div class="prop-country">Argentina</div>
+        <h3>Departamento Palermo Soho</h3>
+        <div class="prop-meta"><span>2 hab</span><span>1 baño</span><span>75 m&sup2;</span></div>
+        <a class="prop-link" href="./propiedad.html?id=4" target="_blank">Ver propiedad &rarr;</a>
+      </div>
+    </div>
+    <div class="prop-card reveal" data-type="Chalet" data-country="España" data-beds="5" data-price="595000">
+      <div class="prop-img">
+        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=80" alt="Chalet con piscina">
+        <span class="prop-price">595.000 &euro;</span>
+        <span class="prop-loc">Alicante</span>
+        <span class="prop-badge rebajado">Rebajado</span>
+      </div>
+      <div class="prop-info">
+        <div class="prop-country">España</div>
+        <h3>Chalet con piscina privada</h3>
+        <div class="prop-meta"><span>5 hab</span><span>3 baños</span><span>320 m&sup2;</span></div>
+        <a class="prop-link" href="./propiedad.html?id=5" target="_blank">Ver propiedad &rarr;</a>
+      </div>
+    </div>
+    <div class="prop-card reveal" data-type="Casa" data-country="Colombia" data-beds="4" data-price="210000">
+      <div class="prop-img">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80" alt="Casa colonial Cartagena">
+        <span class="prop-price">$850M COP</span>
+        <span class="prop-loc">Cartagena</span>
+        <span class="prop-badge favorito">Favorito</span>
+      </div>
+      <div class="prop-info">
+        <div class="prop-country">Colombia</div>
+        <h3>Casa colonial restaurada</h3>
+        <div class="prop-meta"><span>4 hab</span><span>3 baños</span><span>220 m&sup2;</span></div>
+        <a class="prop-link" href="./propiedad.html?id=6" target="_blank">Ver propiedad &rarr;</a>
+      </div>
+    </div>
+    <div class="prop-card reveal" data-type="Departamento" data-country="Chile" data-beds="3" data-price="230000">
+      <div class="prop-img">
+        <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=600&q=80" alt="Departamento Providencia">
+        <span class="prop-price">185M CLP</span>
+        <span class="prop-loc">Santiago, Providencia</span>
+      </div>
+      <div class="prop-info">
+        <div class="prop-country">Chile</div>
+        <h3>Departamento en Providencia</h3>
+        <div class="prop-meta"><span>3 hab</span><span>2 baños</span><span>95 m&sup2;</span></div>
+        <a class="prop-link" href="./propiedad.html?id=7" target="_blank">Ver propiedad &rarr;</a>
+      </div>
+    </div>
+    <div class="prop-card reveal" data-type="Piso" data-country="España" data-beds="3" data-price="245000">
+      <div class="prop-img">
+        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&q=80" alt="Piso reformado Madrid">
+        <span class="prop-price">245.000 &euro;</span>
+        <span class="prop-loc">Madrid, Centro</span>
+        <span class="prop-badge nuevo">Nuevo</span>
+      </div>
+      <div class="prop-info">
+        <div class="prop-country">España</div>
+        <h3>Piso reformado centro</h3>
+        <div class="prop-meta"><span>3 hab</span><span>2 baños</span><span>110 m&sup2;</span></div>
+        <a class="prop-link" href="./propiedad.html?id=8" target="_blank">Ver propiedad &rarr;</a>
+      </div>
     </div>
   </div>
+  <div class="no-results" id="noResults">No se encontraron propiedades con esos filtros. Prueba con otros criterios.</div>
 </section>
 
-<!-- WHY CHOOSE US -->
-<div class="why-section reveal" style="margin-bottom:80px">
-  <div class="section-label">Por que elegirnos</div>
-  <h2 class="section-title" style="margin-bottom:2rem">La diferencia Solara</h2>
-  <div class="why-grid">
-    <div class="why-item">
-      <div class="why-num">01</div>
-      <h4>Atencion personalizada de principio a fin</h4>
-      <p>Cada cliente es unico. Diseamos un plan a medida para encontrar exactamente lo que buscas, con el acompanamiento constante de tu agente asignado.</p>
-    </div>
-    <div class="why-item">
-      <div class="why-num">02</div>
-      <h4>Conocimiento profundo del mercado local</h4>
-      <p>Mas de una decada trabajando en las principales ciudades espanolas nos da una ventaja competitiva que ponemos al servicio de nuestros clientes.</p>
-    </div>
-    <div class="why-item">
-      <div class="why-num">03</div>
-      <h4>Mas de 200 familias encontraron su hogar</h4>
-      <p>Nuestra mejor carta de presentacion son las familias que ya viven en el hogar de sus suenos gracias a la confianza depositada en Solara.</p>
-    </div>
-    <div class="why-item">
-      <div class="why-num">04</div>
-      <h4>Valoracion gratuita de tu propiedad</h4>
-      <p>Si estas pensando en vender, te ofrecemos una valoracion profesional sin compromiso para que conozcas el verdadero potencial de tu inmueble.</p>
-    </div>
-  </div>
+<div class="vender-cta">
+  <h2>¿Quieres vender tu propiedad?</h2>
+  <p>Valoración gratuita, estrategia de marketing personalizada y acompañamiento completo hasta el cierre. Sin compromiso.</p>
+  <a href="./vender.html" class="vender-btn">Solicitar valoración gratuita &rarr;</a>
 </div>
 
-<!-- CONTACT -->
-<section class="contact-section" id="contacto">
-  <div class="reveal">
-    <div class="section-label">Contacto</div>
-    <h2 class="section-title">Encuentra tu hogar ideal</h2>
-    <p class="section-sub">Escribenos y te ayudaremos a dar el primer paso hacia tu nuevo hogar.</p>
-  </div>
-  <div class="contact-grid reveal">
-    <div class="contact-info">
-      <h3>Estamos aqui para ayudarte</h3>
-      <div class="contact-line"><div class="contact-dot"></div><div><strong>Direccion</strong>Calle del Mar 42, Marbella</div></div>
-      <div class="contact-line"><div class="contact-dot"></div><div><strong>Telefono</strong><a href="tel:+34951234567">+34 951 234 567</a></div></div>
-      <div class="contact-line"><div class="contact-dot"></div><div><strong>Email</strong><a href="mailto:info@solarainmobiliaria.es">info@solarainmobiliaria.es</a></div></div>
-      <div class="contact-line"><div class="contact-dot"></div><div><strong>Horario</strong>Lunes a Viernes: 9:00 - 19:00<br>Sabados: 10:00 - 14:00</div></div>
+<section>
+  <div class="about-mini">
+    <div class="about-text">
+      <p class="section-label">Sobre nosotros</p>
+      <h2 class="section-title">Especialistas en propiedades de alto valor</h2>
+      <p>En Solara Inmobiliaria combinamos conocimiento profundo del mercado local con presencia internacional. Trabajamos en España, México, Argentina, Colombia y Chile, siempre con un enfoque personalizado.</p>
+      <p>Cada cliente recibe atención directa de uno de nuestros agentes senior. Sin intermediarios, sin esperas.</p>
+      <a href="./nosotros.html" style="color:var(--gold);font-weight:600;font-size:.9rem">Conoce al equipo &rarr;</a>
+      <div class="about-stats">
+        <div class="about-stat"><strong>+200</strong><span>Familias felices</span></div>
+        <div class="about-stat"><strong>5</strong><span>Países</span></div>
+        <div class="about-stat"><strong>15</strong><span>Años de experiencia</span></div>
+      </div>
     </div>
-    <form class="form-grid" onsubmit="return false">
+    <div class="team-grid">
+      <div class="team-card"><div class="team-av">ES</div><div class="team-name">Elena Solara</div><div class="team-role">Fundadora y Directora</div></div>
+      <div class="team-card"><div class="team-av" style="background:var(--gold)">MR</div><div class="team-name">Miguel Á. Reyes</div><div class="team-role">Agente Senior</div></div>
+      <div class="team-card"><div class="team-av" style="background:var(--green2)">LF</div><div class="team-name">Lucía Fernández</div><div class="team-role">Coordinadora Comercial</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact-section" id="contacto">
+  <div class="contact-grid">
+    <div>
+      <p class="section-label" style="color:var(--gold)">Contacto</p>
+      <h2>Encuentra tu hogar ideal</h2>
+      <p style="margin-bottom:1.5rem">Cuéntanos qué buscas y te enviaremos propiedades que se ajusten a tus necesidades.</p>
+      <div class="contact-dato"><span>Calle del Mar 42, Marbella, España</span></div>
+      <div class="contact-dato"><span>+34 951 234 567</span></div>
+      <div class="contact-dato"><span>info@solarainmobiliaria.es</span></div>
+    </div>
+    <form class="contact-form">
       <input type="text" placeholder="Nombre completo" required>
-      <input type="tel" placeholder="Telefono" required>
-      <input type="email" placeholder="Email" style="grid-column:1/-1" required>
-      <textarea placeholder="Cuentanos que tipo de propiedad buscas, zona preferida, presupuesto..."></textarea>
-      <button type="submit" class="btn">Enviar mensaje</button>
+      <input type="email" placeholder="Email" required>
+      <input type="tel" placeholder="Teléfono">
+      <textarea placeholder="¿Qué tipo de propiedad buscas? Zona, presupuesto, características..."></textarea>
+      <button type="submit">Enviar consulta &rarr;</button>
     </form>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
-  <div><span class="logo">Solara<span>.</span></span><p style="margin-top:.4rem">2024 Solara Inmobiliaria. Todos los derechos reservados.</p></div>
-  <div class="foot-links">
-    <a href="#propiedades">Propiedades</a>
-    <a href="#nosotros">Nosotros</a>
-    <a href="#contacto">Contacto</a>
-  </div>
-  <div><a href="../">Disenado por CLICKICLICK</a></div>
+  <div>&copy; 2026 Solara Inmobiliaria</div>
+  <div><a href="../">Diseñado por CLICKICLICK</a></div>
 </footer>
 
 <script>
-const obs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})},{threshold:0.12,rootMargin:'0px 0px -40px 0px'});
-document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+// Scroll reveal
+var obs=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target)}})
+},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el)});
+
+// Property filtering
+function applyFilters(){
+  var type=document.getElementById('filterType').value;
+  var country=document.getElementById('filterCountry').value;
+  var beds=document.getElementById('filterBeds').value;
+  var cards=document.querySelectorAll('.prop-card');
+  var visible=0;
+  cards.forEach(function(card){
+    var show=true;
+    if(type&&card.dataset.type!==type)show=false;
+    if(country&&card.dataset.country!==country)show=false;
+    if(beds&&parseInt(card.dataset.beds)<parseInt(beds))show=false;
+    card.classList.toggle('hidden',!show);
+    if(show)visible++;
+  });
+  document.getElementById('noResults').classList.toggle('show',visible===0);
+}
 </script>
 </body>
 </html>

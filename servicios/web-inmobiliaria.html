@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Web Inmobiliaria Completa | CLICKICLICK</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1a2744;--teal:#0F766E;--teal2:#0D635C;--white:#FAF8F3;--off:#F0EDE6}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Outfit',sans-serif;background:var(--white);color:var(--navy);line-height:1.6}
+a{text-decoration:none;color:inherit}
+nav{display:flex;justify-content:space-between;align-items:center;padding:1.2rem 5%;max-width:1200px;margin:0 auto}
+nav .logo{font-weight:800;font-size:1.4rem;color:var(--navy)}
+nav .links{display:flex;gap:1.5rem;align-items:center}
+nav .links a{font-weight:500;font-size:.95rem;transition:color .3s}
+nav .links a:hover{color:var(--teal)}
+.btn{background:var(--teal);color:var(--white);padding:.6rem 1.4rem;border-radius:8px;font-weight:600;font-size:.95rem;transition:background .3s}
+.btn:hover{background:var(--teal2)}
+.hero{text-align:center;padding:5rem 5% 3rem;max-width:800px;margin:0 auto}
+.hero .tag{display:inline-block;background:var(--off);color:var(--teal);font-weight:600;font-size:.85rem;padding:.4rem 1rem;border-radius:20px;margin-bottom:1rem}
+.hero h1{font-size:2.6rem;font-weight:800;margin-bottom:.8rem}
+.hero p{font-size:1.1rem;color:#4a5568;font-weight:400;max-width:600px;margin:0 auto}
+section{max-width:900px;margin:0 auto;padding:2.5rem 5%}
+.section-title{font-size:1.6rem;font-weight:700;margin-bottom:1.2rem;color:var(--navy)}
+.includes{background:var(--off);border-radius:16px;padding:2.5rem}
+.includes ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+.includes li{padding:.5rem 0 .5rem 1.6rem;position:relative;font-weight:400}
+.includes li::before{content:'';position:absolute;left:0;top:.85rem;width:8px;height:8px;background:var(--teal);border-radius:50%}
+.why{padding:2.5rem 5%}
+.why p{color:#4a5568;font-size:1.05rem;max-width:900px;margin:0 auto}
+.pricing{text-align:center;background:var(--navy);color:var(--white);border-radius:16px;padding:3rem;margin:2rem auto;max-width:900px}
+.pricing .from{font-size:1rem;font-weight:400;opacity:.8}
+.pricing .price{font-size:3rem;font-weight:800;margin:.3rem 0}
+.cta-section{text-align:center;padding:3rem 5% 4rem}
+.cta-section h2{font-size:1.8rem;font-weight:700;margin-bottom:.5rem}
+.cta-section p{color:#4a5568;margin-bottom:1.5rem}
+footer{text-align:center;padding:2rem 5%;border-top:1px solid var(--off);font-size:.9rem;color:#4a5568}
+footer a{color:var(--teal);font-weight:600}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .6s,transform .6s}
+.reveal.visible{opacity:1;transform:translateY(0)}
+@media(max-width:640px){.hero h1{font-size:1.8rem}.includes ul{grid-template-columns:1fr}.pricing .price{font-size:2.2rem}nav .logo{font-size:1.1rem}}
+</style>
+</head>
+<body>
+<nav>
+<a href="../" class="logo">CLICKICLICK</a>
+<div class="links">
+<a href="../">Inicio</a>
+<a href="../#contacto" class="btn">Contactar</a>
+</div>
+</nav>
+<div class="hero">
+<span class="tag">Desarrollo Web</span>
+<h1>Web Inmobiliaria Completa</h1>
+<p>Tu agencia inmobiliaria merece una presencia digital profesional que capte propietarios y compradores las 24 horas del día.</p>
+</div>
+<section class="reveal">
+<div class="includes">
+<h2 class="section-title">Qué incluye</h2>
+<ul>
+<li>Diseño a medida para tu marca</li>
+<li>Listado de propiedades con fichas individuales</li>
+<li>Galería de fotos profesional</li>
+<li>Filtros de búsqueda avanzados</li>
+<li>Formularios de captación en cada propiedad</li>
+<li>Diseño responsive para móvil y tablet</li>
+<li>SEO básico configurado</li>
+<li>Panel de gestión de contenido</li>
+<li>Dominio y hosting incluidos el primer año</li>
+</ul>
+</div>
+</section>
+<section class="why reveal">
+<h2 class="section-title">Por qué es importante</h2>
+<p>El 73% de los compradores comienza su búsqueda de vivienda en internet. Tu web es la primera impresión que reciben de tu agencia, y determina si contactan contigo o con la competencia. Con una web propia generas leads directos sin depender exclusivamente de portales inmobiliarios de pago, reduciendo costes de captación y construyendo una marca sólida a largo plazo.</p>
+</section>
+<section class="reveal">
+<div class="pricing">
+<span class="from">Desde</span>
+<div class="price">1.200 &euro;</div>
+<span class="from">Proyecto completo</span>
+</div>
+</section>
+<div class="cta-section reveal">
+<h2>¿Te interesa este servicio?</h2>
+<p>Hablemos sobre lo que necesita tu agencia inmobiliaria.</p>
+<a href="../#contacto" class="btn">Solicitar información</a>
+</div>
+<footer>
+<p><strong>CLICKICLICK</strong> · <a href="../">Volver al inicio</a></p>
+</footer>
+<script>
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.15});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

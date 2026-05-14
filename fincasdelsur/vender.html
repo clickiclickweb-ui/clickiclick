@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vender tu propiedad — Fincas del Sur</title>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--brown:#3c1518;--cream:#fdf6e3;--terra:#c1440e;--dark:#2d2017;--border:#d4c5a9;--card-bg:#fff8ee}
+body{font-family:'Source Sans 3',sans-serif;color:var(--dark);background:var(--cream);line-height:1.6}
+h1,h2,h3,h4{font-family:'Merriweather',serif;color:var(--brown)}
+a{color:var(--terra);text-decoration:none;transition:all .3s cubic-bezier(.16,1,.3,1)}
+a:hover{color:var(--brown)}
+.container{max-width:1000px;margin:0 auto;padding:0 20px}
+
+nav{background:var(--brown);color:var(--cream);position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.3)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;max-width:1000px;margin:0 auto;padding:10px 20px}
+.logo{font-family:'Merriweather',serif;font-size:1.4rem;font-weight:900;color:var(--cream)}
+.logo span{color:#e8a87c}
+.nav-links{display:flex;gap:20px}
+.nav-links a{color:var(--cream);font-weight:600;font-size:.95rem;opacity:.9}
+.nav-links a:hover{opacity:1;color:#e8a87c}
+
+.hero-sell{background:linear-gradient(135deg,var(--brown) 0%,#5a2328 60%,var(--terra) 100%);color:var(--cream);padding:60px 20px;text-align:center}
+.hero-sell h1{font-size:2.2rem;margin-bottom:12px;font-weight:900}
+.hero-sell p{font-size:1.1rem;opacity:.9;max-width:600px;margin:0 auto}
+
+.reasons{padding:40px 20px}
+.reasons h2{text-align:center;font-size:1.5rem;margin-bottom:30px}
+.reasons-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;max-width:1000px;margin:0 auto}
+.reason-card{background:var(--card-bg);border:1px solid var(--border);border-radius:6px;padding:24px 18px;text-align:center;transition:all .3s cubic-bezier(.16,1,.3,1)}
+.reason-card:hover{transform:translateY(-3px);box-shadow:0 6px 20px rgba(60,21,24,.1)}
+.reason-icon{width:48px;height:48px;margin:0 auto 12px;background:var(--brown);border-radius:50%;display:flex;align-items:center;justify-content:center}
+.reason-icon svg{width:24px;height:24px;fill:var(--cream)}
+.reason-card h3{font-size:1rem;margin-bottom:6px}
+.reason-card p{font-size:.85rem;color:#666}
+
+.process{background:var(--brown);color:var(--cream);padding:50px 20px}
+.process h2{text-align:center;color:var(--cream);font-size:1.5rem;margin-bottom:35px}
+.steps{max-width:800px;margin:0 auto}
+.step{display:flex;gap:20px;margin-bottom:28px;align-items:flex-start}
+.step-num{width:44px;height:44px;background:var(--terra);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Merriweather',serif;font-weight:900;font-size:1.2rem;flex-shrink:0}
+.step-content h3{font-size:1.05rem;color:#e8a87c;margin-bottom:4px}
+.step-content p{font-size:.9rem;opacity:.85}
+
+.form-section{padding:50px 20px}
+.form-section h2{text-align:center;font-size:1.5rem;margin-bottom:8px}
+.form-section .subtitle{text-align:center;color:#888;margin-bottom:30px;font-size:1rem}
+.val-form{max-width:700px;margin:0 auto;background:var(--card-bg);border:1px solid var(--border);border-radius:8px;padding:30px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form-group{display:flex;flex-direction:column}
+.form-group.full{grid-column:1/-1}
+.form-group label{font-size:.8rem;font-weight:700;color:var(--brown);text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px}
+.form-group input,.form-group select,.form-group textarea{padding:10px 12px;border:2px solid var(--border);border-radius:4px;font-family:'Source Sans 3',sans-serif;font-size:.95rem;transition:border .3s}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--terra);outline:none}
+.form-group textarea{height:80px;resize:vertical}
+.btn-val{display:block;width:100%;margin-top:18px;background:var(--terra);color:#fff;border:none;padding:14px;border-radius:4px;font-weight:700;font-size:1.05rem;cursor:pointer;font-family:'Source Sans 3',sans-serif;transition:all .3s cubic-bezier(.16,1,.3,1)}
+.btn-val:hover{background:var(--brown);transform:translateY(-1px)}
+
+.trust{padding:40px 20px;text-align:center;border-top:1px solid var(--border)}
+.trust-grid{display:flex;justify-content:center;gap:50px;flex-wrap:wrap;margin-top:20px}
+.trust-item .num{font-family:'Merriweather',serif;font-size:2.2rem;font-weight:900;color:var(--terra)}
+.trust-item .label{font-size:.9rem;color:#888}
+
+footer{background:#1a0a0c;color:var(--cream);padding:20px;text-align:center;font-size:.8rem;margin-top:30px}
+footer a{color:#e8a87c}
+
+.reveal{opacity:0;transform:translateY(20px);transition:all .6s cubic-bezier(.16,1,.3,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+@media(max-width:800px){
+  .reasons-grid{grid-template-columns:1fr 1fr}
+  .form-grid{grid-template-columns:1fr}
+  .hero-sell h1{font-size:1.6rem}
+  .trust-grid{gap:30px}
+}
+@media(max-width:500px){
+  .reasons-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">Fincas <span>del Sur</span></a>
+    <div class="nav-links">
+      <a href="index.html">Propiedades</a>
+      <a href="vender.html">Vender</a>
+      <a href="nosotros.html">Nosotros</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero-sell">
+  <h1>Vende con Fincas del Sur</h1>
+  <p>Confianos la venta de tu propiedad. Nuestro equipo de expertos se encarga de todo para que consigas el mejor precio en el menor tiempo posible.</p>
+</section>
+
+<section class="reasons">
+  <h2>Por que vender con nosotros</h2>
+  <div class="reasons-grid">
+    <div class="reason-card reveal">
+      <div class="reason-icon"><svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg></div>
+      <h3>Garantia de confianza</h3>
+      <p>Mas de 22 anos de trayectoria nos avalan. Transparencia total en cada operacion.</p>
+    </div>
+    <div class="reason-card reveal">
+      <div class="reason-icon"><svg viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg></div>
+      <h3>Mejor precio</h3>
+      <p>Valoracion profesional para fijar el precio optimo. Negociamos por ti para maximizar tu beneficio.</p>
+    </div>
+    <div class="reason-card reveal">
+      <div class="reason-icon"><svg viewBox="0 0 24 24"><path d="M15 1H9v2h6V1zm-4 13h2V8h-2v6zm8.03-6.61l1.42-1.42c-.43-.51-.9-.99-1.41-1.41l-1.42 1.42A8.962 8.962 0 0012 4c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-2.12-.74-4.07-1.97-5.61zM12 20c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z"/></svg></div>
+      <h3>Rapidez</h3>
+      <p>Vendemos tu propiedad en una media de 45 dias. Red de compradores activos en 4 paises.</p>
+    </div>
+    <div class="reason-card reveal">
+      <div class="reason-icon"><svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg></div>
+      <h3>Acompanamiento total</h3>
+      <p>Desde la valoracion hasta la firma ante notario. Un agente dedicado durante todo el proceso.</p>
+    </div>
+  </div>
+</section>
+
+<section class="process">
+  <h2>Nuestro proceso de venta</h2>
+  <div class="steps">
+    <div class="step reveal">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <h3>Valoracion gratuita</h3>
+        <p>Visitamos tu propiedad y realizamos una valoracion profesional basada en el mercado actual, comparativas de zona y estado del inmueble. Sin compromiso alguno.</p>
+      </div>
+    </div>
+    <div class="step reveal">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <h3>Plan de comercializacion</h3>
+        <p>Disenamos un plan a medida con fotografia profesional, descripcion optimizada, publicacion en los principales portales inmobiliarios y difusion en nuestra red de contactos.</p>
+      </div>
+    </div>
+    <div class="step reveal">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <h3>Gestion de visitas</h3>
+        <p>Organizamos y acompanamos todas las visitas. Filtramos a los interesados para que solo recibas visitas de compradores cualificados y con capacidad real de compra.</p>
+      </div>
+    </div>
+    <div class="step reveal">
+      <div class="step-num">4</div>
+      <div class="step-content">
+        <h3>Negociacion experta</h3>
+        <p>Nuestros agentes negocian las mejores condiciones para ti. Te asesoramos en cada oferta recibida para que tomes la decision mas acertada.</p>
+      </div>
+    </div>
+    <div class="step reveal">
+      <div class="step-num">5</div>
+      <div class="step-content">
+        <h3>Cierre y escrituracion</h3>
+        <p>Nos encargamos de toda la documentacion legal, coordinacion con notaria, gestorias y bancos. Tu solo tienes que firmar con total tranquilidad.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="form-section">
+  <h2>Solicita una valoracion gratuita</h2>
+  <p class="subtitle">Rellena el formulario y un agente se pondra en contacto contigo en menos de 24 horas.</p>
+  <div class="val-form reveal">
+    <div class="form-grid">
+      <div class="form-group full">
+        <label>Direccion del inmueble</label>
+        <input type="text" placeholder="Calle, numero, ciudad">
+      </div>
+      <div class="form-group">
+        <label>Tipo de inmueble</label>
+        <select>
+          <option>Piso / Departamento</option>
+          <option>Casa</option>
+          <option>Chalet</option>
+          <option>Adosado</option>
+          <option>Otro</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Superficie (m2)</label>
+        <input type="number" placeholder="Ej: 120">
+      </div>
+      <div class="form-group">
+        <label>Habitaciones</label>
+        <select>
+          <option>1</option><option>2</option><option selected>3</option><option>4</option><option>5+</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Antiguedad</label>
+        <select>
+          <option>Menos de 5 anos</option>
+          <option>5 - 15 anos</option>
+          <option>15 - 30 anos</option>
+          <option>Mas de 30 anos</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" placeholder="tu@email.com">
+      </div>
+      <div class="form-group">
+        <label>Telefono</label>
+        <input type="tel" placeholder="+34 600 000 000">
+      </div>
+    </div>
+    <button class="btn-val">Solicitar valoracion gratuita</button>
+  </div>
+</section>
+
+<section class="trust">
+  <h2>Confian en nosotros</h2>
+  <div class="trust-grid">
+    <div class="trust-item reveal"><div class="num">22+</div><div class="label">Anos de experiencia</div></div>
+    <div class="trust-item reveal"><div class="num">1.200+</div><div class="label">Propiedades vendidas</div></div>
+    <div class="trust-item reveal"><div class="num">98%</div><div class="label">Clientes satisfechos</div></div>
+    <div class="trust-item reveal"><div class="num">45</div><div class="label">Dias de media en venta</div></div>
+  </div>
+</section>
+
+<footer>
+  &copy; 2024 Fincas del Sur. Todos los derechos reservados. | Sitio creado por <a href="../">CLICKICLICK</a>
+</footer>
+
+<script>
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting) e.target.classList.add('visible');});
+},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>

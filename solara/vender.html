@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vender tu propiedad — Solara Inmobiliaria</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--green:#1B4332;--gold:#C9A227;--bg:#FAFAF5;--dark:#1a1a1a;--dim:#666;--t:all .3s cubic-bezier(.16,1,.3,1)}
+body{font-family:'DM Sans',sans-serif;color:var(--dark);background:var(--bg);line-height:1.6}
+h1,h2,h3{font-family:'Playfair Display',serif;font-weight:700}
+a{text-decoration:none;color:inherit}
+nav{position:sticky;top:0;z-index:100;background:rgba(250,250,245,.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(27,67,50,.08);padding:0 5vw;display:flex;align-items:center;justify-content:space-between;height:64px}
+nav .logo{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--green)}
+nav .logo span{color:var(--gold)}
+.back{font-size:.85rem;color:var(--dim);transition:var(--t)}
+.back:hover{color:var(--gold)}
+.hero{background:var(--green);color:#fff;padding:100px 5vw 80px;text-align:center}
+.hero h1{font-size:clamp(2rem,4vw,3rem);margin-bottom:1rem}
+.hero p{color:rgba(255,255,255,.7);max-width:500px;margin:0 auto}
+section{padding:80px 5vw;max-width:900px;margin:0 auto}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:2rem}
+.step{text-align:center;padding:2rem 1rem;background:#fff;border:1px solid rgba(27,67,50,.06)}
+.step-num{width:48px;height:48px;background:var(--gold);color:#fff;font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;display:flex;align-items:center;justify-content:center;border-radius:50%;margin:0 auto 1rem}
+.step h3{font-size:1.1rem;margin-bottom:.5rem}
+.step p{font-size:.85rem;color:var(--dim)}
+.benefits{margin-top:3rem}
+.benefit{display:flex;gap:1rem;padding:1.5rem 0;border-bottom:1px solid rgba(27,67,50,.06)}
+.benefit-check{width:28px;height:28px;background:rgba(27,67,50,.06);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--green);font-weight:700;font-size:.8rem}
+.benefit h4{font-size:1rem;margin-bottom:.2rem}
+.benefit p{font-size:.85rem;color:var(--dim)}
+.form-section{background:var(--green);color:#fff;padding:80px 5vw}
+.form-inner{max-width:600px;margin:0 auto}
+.form-inner h2{color:#fff;margin-bottom:.5rem}
+.form-inner>p{color:rgba(255,255,255,.6);margin-bottom:2rem}
+.form-inner input,.form-inner select,.form-inner textarea{width:100%;padding:.75rem 1rem;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.06);color:#fff;font-family:'DM Sans',sans-serif;font-size:.9rem;margin-bottom:.75rem;outline:none;appearance:none}
+.form-inner input::placeholder,.form-inner textarea::placeholder{color:rgba(255,255,255,.35)}
+.form-inner input:focus,.form-inner select:focus,.form-inner textarea:focus{border-color:var(--gold)}
+.form-inner select{color:rgba(255,255,255,.6)}
+.form-inner select option{color:var(--dark);background:#fff}
+.form-inner textarea{min-height:80px;resize:vertical}
+.form-inner button{background:var(--gold);color:var(--green);border:none;padding:.85rem 2rem;font-weight:700;cursor:pointer;transition:var(--t);width:100%;font-size:.95rem}
+.form-inner button:hover{background:#fff}
+footer{padding:2rem 5vw;background:#0f2b1e;color:rgba(255,255,255,.5);display:flex;justify-content:space-between;font-size:.8rem;flex-wrap:wrap;gap:1rem}
+footer a{color:var(--gold)}
+@media(max-width:768px){.steps{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="./" class="logo">Solara <span>Inmobiliaria</span></a>
+  <a href="./" class="back">&larr; Volver al inicio</a>
+</nav>
+<div class="hero">
+  <h1>Vende tu propiedad<br>al mejor precio</h1>
+  <p>Valoración gratuita, estrategia de marketing personalizada y acompañamiento completo hasta el cierre.</p>
+</div>
+<section>
+  <h2 style="text-align:center;color:var(--green);margin-bottom:.5rem">Cómo funciona</h2>
+  <p style="text-align:center;color:var(--dim);max-width:500px;margin:0 auto 1rem">Un proceso claro en tres pasos para que vendas con tranquilidad.</p>
+  <div class="steps">
+    <div class="step"><div class="step-num">1</div><h3>Valoración</h3><p>Analizamos tu propiedad, la zona y el mercado actual para darte un precio realista y competitivo.</p></div>
+    <div class="step"><div class="step-num">2</div><h3>Marketing</h3><p>Fotografía profesional, ficha atractiva, publicación en portales y difusión en nuestra red de compradores cualificados.</p></div>
+    <div class="step"><div class="step-num">3</div><h3>Venta</h3><p>Gestionamos visitas, negociación y todo el papeleo legal hasta la firma. Tú solo te preocupas de celebrar.</p></div>
+  </div>
+  <div class="benefits">
+    <h3 style="color:var(--green);margin-bottom:1rem">Por qué vender con Solara</h3>
+    <div class="benefit"><div class="benefit-check">+</div><div><h4>Conocimiento profundo del mercado local</h4><p>Operamos en España, México, Argentina, Colombia y Chile. Sabemos lo que buscan los compradores en cada zona.</p></div></div>
+    <div class="benefit"><div class="benefit-check">+</div><div><h4>Red internacional de compradores</h4><p>Tu propiedad llega a compradores cualificados en cinco países. Más exposición, mejor precio final.</p></div></div>
+    <div class="benefit"><div class="benefit-check">+</div><div><h4>Fotografía y marketing profesional</h4><p>No publicamos fotos de móvil. Cada propiedad recibe sesión fotográfica profesional y ficha diseñada para enamorar.</p></div></div>
+    <div class="benefit"><div class="benefit-check">+</div><div><h4>Sin costes hasta que vendas</h4><p>Nuestros honorarios solo se aplican cuando la venta se cierra. Sin cuotas mensuales, sin costes ocultos.</p></div></div>
+  </div>
+</section>
+<div class="form-section">
+  <div class="form-inner">
+    <h2>Solicita tu valoración gratuita</h2>
+    <p>Completa el formulario y un agente te contactará en menos de 24 horas.</p>
+    <form>
+      <input type="text" placeholder="Nombre completo" required>
+      <input type="text" placeholder="Dirección de la propiedad" required>
+      <select>
+        <option value="">Tipo de propiedad</option>
+        <option>Piso / Apartamento</option>
+        <option>Casa / Chalet</option>
+        <option>Ático</option>
+        <option>Villa</option>
+        <option>Local comercial</option>
+        <option>Otro</option>
+      </select>
+      <input type="text" placeholder="Superficie aproximada (m2)">
+      <input type="text" placeholder="Habitaciones">
+      <input type="email" placeholder="Email" required>
+      <input type="tel" placeholder="Teléfono" required>
+      <button type="submit">Solicitar valoración gratuita &rarr;</button>
+    </form>
+  </div>
+</div>
+<footer>
+  <div>&copy; 2026 Solara Inmobiliaria</div>
+  <div><a href="../">Diseñado por CLICKICLICK</a></div>
+</footer>
+</body>
+</html>

@@ -8,70 +8,86 @@
 <meta name="theme-color" content="#1a2744">
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--navy:#1a2744;--navy2:#232f52;--orange:#FF5500;--orange2:#ff7733;--white:#ffffff;--off:#f9fafb;--dim:rgba(26,39,68,.55);--cdim:rgba(26,39,68,.4);--border:rgba(26,39,68,.08);--ease:cubic-bezier(.16,1,.3,1)}
+:root{--navy:#1a2744;--navy2:#232f52;--teal:#0F766E;--teal2:#0D635C;--white:#FAF8F3;--off:#F0EDE6;--dim:rgba(26,39,68,.55);--cdim:rgba(26,39,68,.4);--border:rgba(26,39,68,.06);--ease:cubic-bezier(.16,1,.3,1)}
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{background:var(--white);color:var(--navy);font-family:'Outfit',sans-serif;font-weight:300;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%}
 
-nav{position:fixed;top:0;left:0;right:0;z-index:500;height:66px;padding:0 48px;display:flex;justify-content:space-between;align-items:center;background:rgba(248,247,244,.97);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);transition:all .4s}
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:500;height:66px;padding:0 48px;display:flex;justify-content:space-between;align-items:center;background:rgba(250,248,243,.97);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);transition:all .4s}
 nav.dark{background:rgba(26,39,68,.97);border-bottom-color:rgba(255,255,255,.06)}
 .logo{font-size:22px;font-weight:800;letter-spacing:-.5px}
-.logo span{color:var(--orange)}
+.logo span{color:var(--teal)}
+nav.dark .logo{color:white}
 .nav-links{display:flex;gap:28px;list-style:none}
 .nav-links a{font-size:13px;font-weight:500;color:var(--dim);transition:color .3s}
-.nav-links a:hover{color:var(--orange)}
+.nav-links a:hover{color:var(--teal)}
 nav.dark .nav-links a{color:rgba(255,255,255,.5)}
-nav.dark .nav-links a:hover{color:var(--orange)}
+nav.dark .nav-links a:hover{color:var(--teal)}
 .nav-right{display:flex;gap:10px;align-items:center}
-.nav-cta{background:var(--orange);color:white;padding:10px 22px;font-size:13px;font-weight:600;border:none;cursor:pointer;transition:background .3s}
-.nav-cta:hover{background:var(--orange2)}
-.nav-cta-alt{border:1.5px solid var(--orange);color:var(--orange);padding:9px 20px;font-size:13px;font-weight:600;transition:all .3s}
-.nav-cta-alt:hover{background:var(--orange);color:white}
+.nav-cta{background:var(--teal);color:white;padding:10px 22px;font-size:13px;font-weight:600;border:none;cursor:pointer;transition:background .3s}
+.nav-cta:hover{background:var(--teal2)}
+.nav-cta-alt{border:1.5px solid var(--teal);color:var(--teal);padding:9px 20px;font-size:13px;font-weight:600;transition:all .3s}
+.nav-cta-alt:hover{background:var(--teal);color:white}
 .nav-ham{display:none;background:none;border:none;font-size:22px;cursor:pointer;color:var(--navy);padding:4px}
 nav.dark .nav-ham{color:white}
 
+/* HERO */
 .hero{min-height:100dvh;background:var(--navy);display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:120px 48px 80px;position:relative;overflow:hidden;gap:48px}
-.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 80% 50%,rgba(255,85,0,.08) 0%,transparent 70%)}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 80% 50%,rgba(15,118,110,.1) 0%,transparent 70%)}
 .hero-lines{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px);background-size:80px 80px;pointer-events:none}
 .hero-content{position:relative;z-index:2}
-.hero-tag{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,85,0,.4);padding:6px 16px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);margin-bottom:28px;opacity:0;animation:fadeUp .7s .2s forwards}
-.hero-tag::before{content:'';width:6px;height:6px;background:var(--orange);border-radius:50%;animation:pulse 2s infinite}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(15,118,110,.5);padding:6px 16px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--teal);margin-bottom:28px;opacity:0;animation:fadeUp .7s .2s forwards}
+.hero-tag::before{content:'';width:6px;height:6px;background:var(--teal);border-radius:50%;animation:pulse 2s infinite}
 .hero-title{font-size:clamp(36px,5.5vw,72px);font-weight:800;line-height:.95;color:white;margin-bottom:22px;opacity:0;animation:fadeUp .8s .4s forwards;letter-spacing:-.03em}
-.hero-title .acc{color:var(--orange)}
+.hero-title .acc{color:var(--teal)}
 .hero-sub{font-size:16px;line-height:1.75;color:rgba(255,255,255,.58);max-width:500px;margin-bottom:36px;opacity:0;animation:fadeUp .8s .6s forwards}
 .hero-btns{display:flex;gap:12px;flex-wrap:wrap;opacity:0;animation:fadeUp .8s .8s forwards}
-.btn-p{background:var(--orange);color:white;padding:15px 34px;font-size:14px;font-weight:600;border:none;cursor:pointer;transition:all .3s var(--ease);display:inline-flex;align-items:center;gap:10px}
-.btn-p:hover{background:var(--orange2);transform:translateY(-2px)}
+.btn-p{background:var(--teal);color:white;padding:15px 34px;font-size:14px;font-weight:600;border:none;cursor:pointer;transition:all .3s var(--ease);display:inline-flex;align-items:center;gap:10px}
+.btn-p:hover{background:var(--teal2);transform:translateY(-2px)}
+.btn-p:active{transform:translateY(0) scale(.98)}
 .btn-g{border:1px solid rgba(255,255,255,.2);color:white;padding:15px 34px;font-size:14px;font-weight:500;background:none;cursor:pointer;transition:all .3s var(--ease);display:inline-flex;align-items:center}
-.btn-g:hover{border-color:var(--orange);color:var(--orange)}
+.btn-g:hover{border-color:var(--teal);color:var(--teal)}
 .hero-visual{position:relative;z-index:2;opacity:0;animation:fadeUp .8s 1s forwards}
-.hero-mockup{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:24px;display:flex;flex-direction:column;gap:16px}
-.mockup-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.06);padding:16px;display:flex;gap:14px;align-items:center;transition:border-color .3s}
-.mockup-card:hover{border-color:rgba(255,85,0,.3)}
-.mockup-img{width:64px;height:48px;background:linear-gradient(135deg,rgba(255,85,0,.3),rgba(255,119,51,.1));flex-shrink:0}
-.mockup-txt{flex:1}
-.mockup-title{color:white;font-size:13px;font-weight:600;margin-bottom:3px}
-.mockup-meta{font-size:11px;color:rgba(255,255,255,.35)}
-.mockup-price{color:var(--orange);font-size:14px;font-weight:700}
+.hero-browser{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);overflow:hidden}
+.browser-bar{display:flex;align-items:center;gap:12px;padding:10px 14px;background:rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.06)}
+.browser-dots{display:flex;gap:5px}
+.browser-dots i{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.12);display:block}
+.browser-url{font-size:10px;color:rgba(255,255,255,.25);background:rgba(255,255,255,.04);padding:3px 10px;flex:1;text-align:center}
+.browser-body{padding:16px}
+.mini-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+.mini-logo{font-size:13px;font-weight:700;color:var(--teal)}
+.mini-search{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.06);padding:6px 10px;font-size:9px;color:rgba(255,255,255,.3);width:45%;text-align:center}
+.mini-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.mini-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.05);overflow:hidden;transition:border-color .3s}
+.mini-card:hover{border-color:rgba(15,118,110,.3)}
+.mini-card-img{height:56px;background-size:cover;background-position:center}
+.mini-card-body{padding:8px}
+.mini-card-body strong{font-size:10px;font-weight:700;color:white;display:block;margin-bottom:2px}
+.mini-card-body small{font-size:8px;color:rgba(255,255,255,.3)}
+.mini-card-body .mini-price{font-size:11px;font-weight:700;color:var(--teal);margin-top:4px;display:block}
 .hero-stats{display:flex;gap:40px;margin-top:48px;padding-top:32px;border-top:1px solid rgba(255,255,255,.08);opacity:0;animation:fadeUp .8s 1.2s forwards;flex-wrap:wrap}
-.hstat-num{font-size:28px;font-weight:800;color:var(--orange);display:block;line-height:1}
+.hstat-num{font-size:28px;font-weight:800;color:var(--teal);display:block;line-height:1}
 .hstat-lbl{font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.38)}
 
+/* TICKER */
 .ticker{background:var(--off);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:14px 0;overflow:hidden}
 .ticker-track{display:flex;gap:56px;white-space:nowrap;animation:ticker 30s linear infinite}
 .ticker-item{font-size:12px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--cdim);flex-shrink:0}
-.tsep{color:var(--orange);opacity:.5}
+.tsep{color:var(--teal);opacity:.5}
 
-.slabel{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--orange);margin-bottom:14px}
+/* SHARED */
+.slabel{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--teal);margin-bottom:14px}
 .stitle{font-size:clamp(28px,4vw,48px);font-weight:800;line-height:1.05;letter-spacing:-.02em;margin-bottom:14px}
-.stitle span{color:var(--orange)}
+.stitle span{color:var(--teal)}
 .ssub{font-size:14px;color:var(--dim);line-height:1.75;max-width:520px;margin-bottom:48px}
 
+/* PROBLEMA */
 .problema{padding:100px 48px;background:var(--off)}
 .prob-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;max-width:1100px;margin:0 auto}
-.prob-stat{font-size:clamp(48px,6vw,88px);font-weight:800;color:var(--orange);line-height:.95;letter-spacing:-.03em;margin-bottom:16px}
+.prob-stat{font-size:clamp(48px,6vw,88px);font-weight:800;color:var(--teal);line-height:.95;letter-spacing:-.03em;margin-bottom:16px}
 .prob-stat small{font-size:40%;color:var(--dim);font-weight:400;display:block;margin-top:8px;letter-spacing:0}
 .prob-items{display:flex;flex-direction:column;gap:20px}
 .prob-item{display:flex;gap:16px;align-items:flex-start}
@@ -79,89 +95,113 @@ nav.dark .nav-ham{color:white}
 .prob-item p{font-size:14px;line-height:1.7;color:var(--dim)}
 .prob-item strong{color:var(--navy);font-weight:600}
 
+/* SERVICIOS */
 .servicios{padding:100px 48px}
 .srv-list{display:flex;flex-direction:column;gap:2px;background:var(--border);max-width:1100px;margin:0 auto}
-.srv-item{display:grid;grid-template-columns:auto 1fr auto;gap:32px;align-items:center;background:var(--white);padding:36px 32px;transition:background .3s;cursor:default}
+.srv-item{display:grid;grid-template-columns:auto 1fr auto;gap:32px;align-items:center;background:var(--white);padding:36px 32px;transition:background .3s;cursor:pointer}
 .srv-item:hover{background:var(--off)}
-.srv-num{font-size:10px;letter-spacing:.2em;color:var(--orange);opacity:.6;font-weight:700}
+.srv-num{font-size:10px;letter-spacing:.2em;color:var(--teal);opacity:.6;font-weight:700}
 .srv-body h3{font-size:20px;font-weight:700;margin-bottom:6px}
+.srv-body h3 a{transition:color .3s}
+.srv-body h3 a:hover{color:var(--teal)}
 .srv-body p{font-size:13px;color:var(--dim);line-height:1.7;max-width:520px}
-.srv-price{font-size:18px;font-weight:700;color:var(--orange);text-align:right;white-space:nowrap}
+.srv-price{font-size:18px;font-weight:700;color:var(--teal);text-align:right;white-space:nowrap}
 .srv-price small{font-size:10px;font-weight:400;color:var(--cdim);display:block;margin-top:2px}
+.srv-arrow{font-size:18px;color:var(--teal);opacity:0;transition:opacity .3s,transform .3s}
+.srv-item:hover .srv-arrow{opacity:1;transform:translateX(4px)}
 
+/* PORTFOLIO */
 .portfolio{padding:100px 0;background:var(--navy)}
 .port-header{padding:0 48px;margin-bottom:48px}
 .port-header .stitle{color:white}
 .port-header .ssub{color:rgba(255,255,255,.45)}
-.port-grid{display:grid;grid-template-columns:2fr 1fr;gap:3px}
-.port-grid.row2{grid-template-columns:1fr 2fr}
+.port-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:3px}
 .port-card{position:relative;overflow:hidden;aspect-ratio:16/10;cursor:pointer}
-.port-card img{width:100%;height:100%;object-fit:cover;filter:brightness(.6);transition:filter .6s,transform .8s}
-.port-card:hover img{filter:brightness(.8);transform:scale(1.04)}
+.port-card-bg{width:100%;height:100%;transition:transform .8s var(--ease)}
+.port-card:hover .port-card-bg{transform:scale(1.04)}
 .port-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(26,39,68,.95) 0%,transparent 55%);display:flex;flex-direction:column;justify-content:flex-end;padding:36px}
-.port-tag{display:inline-block;background:var(--orange);color:white;padding:4px 12px;font-size:9px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;margin-bottom:10px;width:fit-content}
-.port-name{font-size:clamp(20px,2.5vw,32px);font-weight:800;color:white;margin-bottom:6px}
+.port-tag{display:inline-block;background:var(--teal);color:white;padding:4px 12px;font-size:9px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;margin-bottom:10px;width:fit-content}
+.port-name{font-size:clamp(20px,2.5vw,28px);font-weight:800;color:white;margin-bottom:6px}
 .port-desc{font-size:12px;color:rgba(255,255,255,.5);margin-bottom:18px;line-height:1.6}
-.port-link{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--orange);border-bottom:1px solid rgba(255,85,0,.4);padding-bottom:3px;transition:gap .3s}
+.port-link{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--teal);border-bottom:1px solid rgba(15,118,110,.4);padding-bottom:3px;transition:gap .3s}
 .port-link:hover{gap:14px}
-.port-featured{border:2px solid var(--orange);position:relative}
-.port-featured::after{content:'DEMO INMOBILIARIA';position:absolute;top:16px;left:16px;background:var(--orange);color:white;font-size:9px;font-weight:700;letter-spacing:.15em;padding:5px 12px;z-index:5}
 .port-more{padding:44px 48px;text-align:center;border-top:1px solid rgba(255,255,255,.06)}
 .port-more p{color:rgba(255,255,255,.38);font-size:14px;margin-bottom:18px}
 
+/* ANATOMIA */
 .anatomia{padding:100px 48px;background:var(--off)}
 .anat-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;max-width:1100px;margin:0 auto}
-.anat-item{padding:32px;border-left:3px solid var(--orange);background:var(--white);transition:transform .3s var(--ease)}
+.anat-item{padding:32px;border-left:3px solid var(--teal);background:var(--white);transition:transform .3s var(--ease)}
 .anat-item:hover{transform:translateX(4px)}
 .anat-item h3{font-size:17px;font-weight:700;margin-bottom:8px}
 .anat-item p{font-size:13px;color:var(--dim);line-height:1.7}
-.anat-number{font-size:36px;font-weight:800;color:var(--orange);opacity:.15;line-height:1;margin-bottom:8px}
+.anat-number{font-size:48px;font-weight:800;color:var(--teal);opacity:.25;line-height:1;margin-bottom:6px}
 
+/* NUMEROS */
 .numeros{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border)}
 .num-item{background:var(--white);padding:44px 32px;text-align:center;border-bottom:3px solid transparent;transition:border-color .4s}
-.num-item:hover{border-bottom-color:var(--orange)}
+.num-item:hover{border-bottom-color:var(--teal)}
 .num-val{font-size:clamp(36px,4vw,56px);font-weight:800;color:var(--navy);line-height:1;margin-bottom:8px}
-.num-val span{color:var(--orange)}
+.num-val span{color:var(--teal)}
 .num-lbl{font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--cdim)}
 
+/* PROCESO */
 .proceso{padding:100px 48px}
 .proceso-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:48px;position:relative;max-width:1100px;margin-left:auto;margin-right:auto}
-.proceso-steps::before{content:'';position:absolute;top:26px;left:12%;right:12%;height:1px;background:linear-gradient(to right,transparent,rgba(255,85,0,.3),transparent)}
+.proceso-steps::before{content:'';position:absolute;top:26px;left:12%;right:12%;height:1px;background:linear-gradient(to right,transparent,rgba(15,118,110,.3),transparent)}
 .pstep{padding:0 20px;text-align:center}
-.pstep-circle{width:52px;height:52px;background:var(--orange);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:18px;font-weight:800;color:white;position:relative;z-index:1}
+.pstep-circle{width:52px;height:52px;background:var(--teal);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:18px;font-weight:800;color:white;position:relative;z-index:1}
 .pstep-title{font-size:17px;font-weight:700;margin-bottom:8px}
 .pstep-desc{font-size:13px;color:var(--dim);line-height:1.7}
 
+/* TESTIMONIOS */
 .testimonios{padding:100px 48px;background:var(--navy)}
 .testimonios .stitle{color:white}
 .testimonios .ssub{color:rgba(255,255,255,.45)}
 .test-grid{display:grid;grid-template-columns:2fr 1fr;gap:18px;margin-top:48px}
 .test-grid-row2{display:grid;grid-template-columns:1fr 2fr;gap:18px;margin-top:18px}
 .test-card{padding:32px 28px;border:1px solid rgba(255,255,255,.07);transition:border-color .4s}
-.test-card:hover{border-color:rgba(255,85,0,.3)}
+.test-card:hover{border-color:rgba(15,118,110,.3)}
 .test-stars{display:flex;gap:3px;margin-bottom:10px}
-.star{width:11px;height:11px;background:var(--orange);clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)}
+.star{width:11px;height:11px;background:var(--teal);clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)}
 .test-txt{font-size:14px;line-height:1.85;color:rgba(255,255,255,.62);font-style:italic;margin-bottom:22px}
 .test-autor{display:flex;align-items:center;gap:12px}
-.test-av{width:40px;height:40px;border-radius:50%;background:var(--orange);display:flex;align-items:center;justify-content:center;font-weight:800;color:white;font-size:14px;flex-shrink:0}
+.test-av{width:40px;height:40px;border-radius:50%;background:var(--teal);display:flex;align-items:center;justify-content:center;font-weight:800;color:white;font-size:14px;flex-shrink:0}
 .test-nombre{font-size:13px;font-weight:700;color:white}
 .test-emp{font-size:11px;color:rgba(255,255,255,.32);margin-top:2px}
 
+/* FAQ */
+.faq{padding:100px 48px}
+.faq-list{max-width:800px;margin:0 auto}
+.faq-item{border-bottom:1px solid var(--border)}
+.faq-q{padding:22px 0;font-size:16px;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:color .3s}
+.faq-q:hover{color:var(--teal)}
+.faq-q::after{content:'+';font-size:22px;font-weight:300;color:var(--teal);transition:transform .3s}
+.faq-item.open .faq-q::after{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s var(--ease),padding .4s}
+.faq-a p{font-size:14px;color:var(--dim);line-height:1.75;padding-bottom:22px}
+
+/* HISTORIA */
+.historia{padding:80px 48px;background:var(--off)}
+.hist-inner{max-width:700px;margin:0 auto;text-align:center}
+.hist-inner p{font-size:15px;line-height:1.85;color:var(--dim)}
+
+/* CTA FINAL */
 .cta-final{padding:100px 48px;background:var(--navy);text-align:center;position:relative;overflow:hidden}
-.cta-final::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 50% 50%,rgba(255,85,0,.08) 0%,transparent 70%)}
+.cta-final::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 50% 50%,rgba(15,118,110,.1) 0%,transparent 70%)}
 .cta-inner{position:relative;z-index:2}
 .cta-title{font-size:clamp(28px,5vw,60px);font-weight:800;color:white;letter-spacing:-.02em;line-height:1.05;margin-bottom:18px}
-.cta-title span{color:var(--orange)}
+.cta-title span{color:var(--teal)}
 .cta-sub{font-size:15px;color:rgba(255,255,255,.45);margin-bottom:40px;max-width:460px;margin-left:auto;margin-right:auto}
 .cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:32px}
 .cta-links{display:flex;justify-content:center;gap:32px;margin-top:24px;flex-wrap:wrap}
-.cta-link{color:rgba(255,255,255,.55);font-size:13px;transition:color .3s}
+.cta-link{color:rgba(255,255,255,.55);font-size:13px}
 .cta-link a{color:rgba(255,255,255,.7);transition:color .3s}
-.cta-link a:hover{color:var(--orange)}
+.cta-link a:hover{color:var(--teal)}
 
+/* CONTACTO */
 .contacto{padding:100px 48px}
 .contacto-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start;max-width:1100px;margin:0 auto}
-.cinfo-title{font-size:26px;font-weight:800;margin-bottom:14px}
 .cinfo-desc{font-size:14px;color:var(--dim);line-height:1.8;margin-bottom:32px}
 .cdato{display:flex;align-items:center;gap:14px;padding:14px 0;border-bottom:1px solid var(--border)}
 .cdato:last-child{border-bottom:none}
@@ -169,36 +209,51 @@ nav.dark .nav-ham{color:white}
 .cdato-lbl{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--cdim);display:block;margin-bottom:2px}
 .cdato-val{font-size:14px;font-weight:500}
 .cdato-val a{transition:color .3s}
-.cdato-val a:hover{color:var(--orange)}
-.cal-btn{display:inline-flex;align-items:center;gap:10px;margin-top:24px;padding:14px 28px;border:2px solid var(--orange);color:var(--orange);font-size:14px;font-weight:600;transition:all .3s var(--ease)}
-.cal-btn:hover{background:var(--orange);color:white}
+.cdato-val a:hover{color:var(--teal)}
+.cal-btn{display:inline-flex;align-items:center;gap:10px;margin-top:24px;padding:14px 28px;border:2px solid var(--teal);color:var(--teal);font-size:14px;font-weight:600;transition:all .3s var(--ease)}
+.cal-btn:hover{background:var(--teal);color:white}
 .fg{margin-bottom:18px}
 .fg label{display:block;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--dim);margin-bottom:7px;font-weight:500}
 .fg input,.fg textarea,.fg select{width:100%;padding:13px 16px;border:1px solid var(--border);background:var(--off);font-family:'Outfit',sans-serif;font-size:14px;color:var(--navy);outline:none;transition:border-color .3s;-webkit-appearance:none;border-radius:0}
-.fg input:focus,.fg textarea:focus,.fg select:focus{border-color:var(--orange)}
+.fg input:focus,.fg textarea:focus,.fg select:focus{border-color:var(--teal)}
 .fg textarea{resize:vertical;min-height:110px}
-.form-btn{width:100%;padding:15px;background:var(--orange);color:white;border:none;font-family:'Outfit',sans-serif;font-size:15px;font-weight:700;cursor:pointer;transition:background .3s}
-.form-btn:hover{background:var(--orange2)}
+.form-btn{width:100%;padding:15px;background:var(--teal);color:white;border:none;font-family:'Outfit',sans-serif;font-size:15px;font-weight:700;cursor:pointer;transition:background .3s}
+.form-btn:hover{background:var(--teal2)}
+.form-btn:active{transform:scale(.98)}
 
+/* AYUDA */
+.ayuda{padding:60px 48px;background:var(--off);text-align:center}
+.ayuda p{font-size:14px;color:var(--dim);line-height:1.75;margin-bottom:8px}
+.ayuda a{color:var(--teal);font-weight:600;transition:opacity .3s}
+.ayuda a:hover{opacity:.7}
+
+/* FOOTER */
 footer{padding:56px 48px 32px;background:var(--navy)}
 .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:52px;margin-bottom:44px}
 .flogo{font-size:20px;font-weight:800;color:white;margin-bottom:14px;letter-spacing:-.5px}
-.flogo span{color:var(--orange)}
+.flogo span{color:var(--teal)}
 .fdesc{font-size:12px;color:rgba(255,255,255,.38);line-height:1.8;max-width:280px}
-.fcol h4{font-size:9px;letter-spacing:.25em;text-transform:uppercase;color:rgba(255,85,0,.8);margin-bottom:16px}
+.fcol h4{font-size:9px;letter-spacing:.25em;text-transform:uppercase;color:rgba(15,118,110,.8);margin-bottom:16px}
 .fcol a{display:block;color:rgba(255,255,255,.4);font-size:13px;margin-bottom:9px;transition:color .3s}
-.fcol a:hover{color:var(--orange)}
+.fcol a:hover{color:var(--teal)}
 .footer-bottom{border-top:1px solid rgba(255,255,255,.06);padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 .footer-bottom p{font-size:11px;color:rgba(255,255,255,.18)}
 
+/* MOBILE MENU */
 .menu-movil{position:fixed;inset:0;background:rgba(26,39,68,.99);z-index:700;display:flex;flex-direction:column;align-items:center;justify-content:center;transform:translateX(100%);transition:transform .4s var(--ease)}
 .menu-movil.open{transform:translateX(0)}
 .menu-movil ul{list-style:none;text-align:center}
 .menu-movil li{margin-bottom:22px}
 .menu-movil a{font-size:28px;font-weight:800;color:rgba(255,255,255,.8);transition:color .3s}
-.menu-movil a:hover{color:var(--orange)}
+.menu-movil a:hover{color:var(--teal)}
 .menu-x{position:absolute;top:20px;right:22px;background:none;border:none;color:rgba(255,255,255,.4);font-size:26px;cursor:pointer}
 
+/* FLOATING CTA */
+.float-cta{position:fixed;bottom:24px;right:24px;z-index:400;background:var(--teal);color:white;padding:14px 24px;font-size:13px;font-weight:700;display:flex;align-items:center;gap:8px;box-shadow:0 4px 20px rgba(15,118,110,.3);opacity:0;transform:translateY(20px);transition:all .4s var(--ease);pointer-events:none}
+.float-cta.show{opacity:1;transform:translateY(0);pointer-events:all}
+.float-cta:hover{background:var(--teal2);transform:translateY(-2px)}
+
+/* ANIMATIONS */
 .reveal{opacity:0;transform:translateY(28px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
 .reveal.vis{opacity:1;transform:translateY(0)}
 .d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
@@ -206,6 +261,7 @@ footer{padding:56px 48px 32px;background:var(--navy)}
 @keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
 
+/* RESPONSIVE */
 @media(max-width:900px){
   nav{padding:0 20px}
   .nav-links,.nav-cta,.nav-cta-alt{display:none}
@@ -213,13 +269,13 @@ footer{padding:56px 48px 32px;background:var(--navy)}
   .hero{grid-template-columns:1fr;padding:100px 20px 60px;min-height:auto}
   .hero-visual{display:none}
   .hero-stats{gap:20px}
-  .servicios,.proceso,.anatomia,.cta-final,.contacto,.problema{padding:72px 20px}
+  .servicios,.proceso,.anatomia,.cta-final,.contacto,.problema,.faq,.historia,.ayuda{padding:72px 20px}
   .port-header,.port-more{padding-left:20px;padding-right:20px}
   .testimonios{padding:72px 20px}
   .prob-grid{grid-template-columns:1fr;gap:36px}
   .srv-item{grid-template-columns:1fr;gap:12px}
   .srv-price{text-align:left}
-  .port-grid,.port-grid.row2{grid-template-columns:1fr}
+  .port-grid{grid-template-columns:1fr}
   .numeros{grid-template-columns:1fr 1fr;padding:0}
   .proceso-steps{grid-template-columns:1fr 1fr;gap:28px}
   .proceso-steps::before{display:none}
@@ -231,6 +287,7 @@ footer{padding:56px 48px 32px;background:var(--navy)}
   .footer-bottom{flex-direction:column}
   .cta-links{flex-direction:column;align-items:center;gap:16px}
   .cta-btns{flex-direction:column;align-items:center}
+  .float-cta{bottom:16px;right:16px;padding:12px 18px;font-size:12px}
 }
 @media(max-width:480px){
   .numeros{grid-template-columns:1fr}
@@ -245,8 +302,9 @@ footer{padding:56px 48px 32px;background:var(--navy)}
   <ul>
     <li><a href="#servicios" onclick="toggleMenu()">Servicios</a></li>
     <li><a href="#portfolio" onclick="toggleMenu()">Portfolio</a></li>
-    <li><a href="#proceso" onclick="toggleMenu()">Como funciona</a></li>
+    <li><a href="#proceso" onclick="toggleMenu()">Cómo funciona</a></li>
     <li><a href="#testimonios" onclick="toggleMenu()">Clientes</a></li>
+    <li><a href="#faq" onclick="toggleMenu()">FAQ</a></li>
     <li><a href="#contacto" onclick="toggleMenu()">Contactar</a></li>
   </ul>
 </div>
@@ -256,11 +314,11 @@ footer{padding:56px 48px 32px;background:var(--navy)}
   <ul class="nav-links">
     <li><a href="#servicios">Servicios</a></li>
     <li><a href="#portfolio">Portfolio</a></li>
-    <li><a href="#proceso">Como funciona</a></li>
+    <li><a href="#proceso">Cómo funciona</a></li>
     <li><a href="#testimonios">Clientes</a></li>
   </ul>
   <div class="nav-right">
-    <a href="https://calendly.com/clickiclickweb" target="_blank" class="nav-cta-alt">Agenda una llamada</a>
+    <a href="https://calendly.com/diegopuelles/30min" target="_blank" class="nav-cta-alt">Agenda una llamada</a>
     <a href="#contacto" class="nav-cta">Contactar</a>
     <button class="nav-ham" onclick="toggleMenu()">&#9776;</button>
   </div>
@@ -273,10 +331,10 @@ footer{padding:56px 48px 32px;background:var(--navy)}
   <div class="hero-content">
     <div class="hero-tag">Webs para inmobiliarias</div>
     <h1 class="hero-title">Tu inmobiliaria<br>merece una web<br>que <span class="acc">venda</span></h1>
-    <p class="hero-sub">Webs a medida para inmobiliarias boutique que convierten visitas en llamadas. Fichas de propiedad que enamoran, captacion de leads automatica y SEO local que te pone primero en Google.</p>
+    <p class="hero-sub">Webs a medida para inmobiliarias boutique que convierten visitas en llamadas. Fichas de propiedad que enamoran, captación de leads automática y SEO local que te pone primero en Google.</p>
     <div class="hero-btns">
-      <a href="https://calendly.com/clickiclickweb" target="_blank" class="btn-p">Agenda una llamada &rarr;</a>
-      <a href="#portfolio" class="btn-g">Ver demo inmobiliaria</a>
+      <a href="https://calendly.com/diegopuelles/30min" target="_blank" class="btn-p">Agenda una llamada &rarr;</a>
+      <a href="#portfolio" class="btn-g">Ver demos inmobiliarias</a>
     </div>
     <div class="hero-stats">
       <div><span class="hstat-num">+50</span><span class="hstat-lbl">proyectos entregados</span></div>
@@ -286,33 +344,51 @@ footer{padding:56px 48px 32px;background:var(--navy)}
     </div>
   </div>
   <div class="hero-visual">
-    <div class="hero-mockup">
-      <div style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:4px">Vista previa: web inmobiliaria</div>
-      <div class="mockup-card">
-        <div class="mockup-img"></div>
-        <div class="mockup-txt">
-          <div class="mockup-title">Villa Mediterranea</div>
-          <div class="mockup-meta">Marbella &middot; 4 hab &middot; 285m2</div>
-        </div>
-        <div class="mockup-price">485.000 EUR</div>
+    <div class="hero-browser">
+      <div class="browser-bar">
+        <div class="browser-dots"><i></i><i></i><i></i></div>
+        <div class="browser-url">solarainmobiliaria.es</div>
       </div>
-      <div class="mockup-card">
-        <div class="mockup-img" style="background:linear-gradient(135deg,rgba(255,85,0,.2),rgba(26,39,68,.3))"></div>
-        <div class="mockup-txt">
-          <div class="mockup-title">Atico con vistas</div>
-          <div class="mockup-meta">Valencia &middot; 3 hab &middot; 140m2</div>
+      <div class="browser-body">
+        <div class="mini-header">
+          <div class="mini-logo">Solara</div>
+          <div class="mini-search">Buscar propiedades...</div>
         </div>
-        <div class="mockup-price">325.000 EUR</div>
-      </div>
-      <div class="mockup-card">
-        <div class="mockup-img" style="background:linear-gradient(135deg,rgba(255,119,51,.2),rgba(26,39,68,.2))"></div>
-        <div class="mockup-txt">
-          <div class="mockup-title">Casa adosada</div>
-          <div class="mockup-meta">Sevilla &middot; 4 hab &middot; 190m2</div>
+        <div class="mini-grid">
+          <div class="mini-card">
+            <div class="mini-card-img" style="background:linear-gradient(135deg,#1B4332,#2d6a4f)"></div>
+            <div class="mini-card-body">
+              <strong>Villa Mediterránea</strong>
+              <small>Marbella &middot; 4 hab &middot; 285 m&sup2;</small>
+              <span class="mini-price">485.000 &euro;</span>
+            </div>
+          </div>
+          <div class="mini-card">
+            <div class="mini-card-img" style="background:linear-gradient(135deg,#264653,#2a9d8f)"></div>
+            <div class="mini-card-body">
+              <strong>Ático con vistas</strong>
+              <small>Valencia &middot; 3 hab &middot; 140 m&sup2;</small>
+              <span class="mini-price">325.000 &euro;</span>
+            </div>
+          </div>
+          <div class="mini-card">
+            <div class="mini-card-img" style="background:linear-gradient(135deg,#3a5a40,#588157)"></div>
+            <div class="mini-card-body">
+              <strong>Casa adosada</strong>
+              <small>Sevilla &middot; 4 hab &middot; 190 m&sup2;</small>
+              <span class="mini-price">275.000 &euro;</span>
+            </div>
+          </div>
+          <div class="mini-card">
+            <div class="mini-card-img" style="background:linear-gradient(135deg,#1a2744,#344e41)"></div>
+            <div class="mini-card-body">
+              <strong>Piso centro</strong>
+              <small>Málaga &middot; 2 hab &middot; 85 m&sup2;</small>
+              <span class="mini-price">195.000 &euro;</span>
+            </div>
+          </div>
         </div>
-        <div class="mockup-price">275.000 EUR</div>
       </div>
-      <div style="font-size:10px;color:rgba(255,255,255,.2);text-align:center;padding:8px 0">Asi se ve tu web con CLICKICLICK</div>
     </div>
   </div>
 </section>
@@ -323,17 +399,17 @@ footer{padding:56px 48px 32px;background:var(--navy)}
     <span class="ticker-item">Webs Inmobiliarias</span><span class="tsep"> &#10022; </span>
     <span class="ticker-item">Fichas de Propiedad</span><span class="tsep"> &#10022; </span>
     <span class="ticker-item">SEO Local</span><span class="tsep"> &#10022; </span>
-    <span class="ticker-item">Captacion de Leads</span><span class="tsep"> &#10022; </span>
+    <span class="ticker-item">Captación de Leads</span><span class="tsep"> &#10022; </span>
     <span class="ticker-item">Branding Inmobiliario</span><span class="tsep"> &#10022; </span>
     <span class="ticker-item">Agentes de IA</span><span class="tsep"> &#10022; </span>
-    <span class="ticker-item">Entrega Rapida</span><span class="tsep"> &#10022; </span>
+    <span class="ticker-item">Entrega Rápida</span><span class="tsep"> &#10022; </span>
     <span class="ticker-item">Webs Inmobiliarias</span><span class="tsep"> &#10022; </span>
     <span class="ticker-item">Fichas de Propiedad</span><span class="tsep"> &#10022; </span>
     <span class="ticker-item">SEO Local</span><span class="tsep"> &#10022; </span>
-    <span class="ticker-item">Captacion de Leads</span><span class="tsep"> &#10022; </span>
+    <span class="ticker-item">Captación de Leads</span><span class="tsep"> &#10022; </span>
     <span class="ticker-item">Branding Inmobiliario</span><span class="tsep"> &#10022; </span>
     <span class="ticker-item">Agentes de IA</span><span class="tsep"> &#10022; </span>
-    <span class="ticker-item">Entrega Rapida</span><span class="tsep"> &#10022; </span>
+    <span class="ticker-item">Entrega Rápida</span><span class="tsep"> &#10022; </span>
   </div>
 </div>
 
@@ -342,7 +418,7 @@ footer{padding:56px 48px 32px;background:var(--navy)}
   <div class="prob-grid">
     <div class="reveal">
       <div class="prob-stat">73%<small>de los compradores buscan propiedades online antes de llamar a nadie.</small></div>
-      <p style="font-size:15px;color:var(--dim);line-height:1.7;margin-top:16px">Si tu web no los convence en 3 segundos, llaman a tu competencia. Asi de simple. Una web mediocre no solo no ayuda: te cuesta dinero cada dia que pasa.</p>
+      <p style="font-size:15px;color:var(--dim);line-height:1.7;margin-top:16px">Si tu web no los convence en 3 segundos, llaman a tu competencia. Así de simple. Una web mediocre no solo no ayuda: te cuesta dinero cada día que pasa.</p>
     </div>
     <div class="prob-items reveal d1">
       <div class="prob-item">
@@ -351,15 +427,15 @@ footer{padding:56px 48px 32px;background:var(--navy)}
       </div>
       <div class="prob-item">
         <div class="prob-x">&times;</div>
-        <p><strong>Sin fichas de propiedad atractivas</strong> &mdash; Fotos mal presentadas y sin informacion clara. El comprador no se enamora y sigue buscando en otro sitio.</p>
+        <p><strong>Sin fichas de propiedad atractivas</strong> &mdash; Fotos mal presentadas y sin información clara. El comprador no se enamora y sigue buscando en otro sitio.</p>
       </div>
       <div class="prob-item">
         <div class="prob-x">&times;</div>
-        <p><strong>Sin captacion de leads</strong> &mdash; Dependes del boca a boca y de portales externos que te cobran por cada contacto. Tu web deberia generar leads propios.</p>
+        <p><strong>Sin captación de leads</strong> &mdash; Dependes del boca a boca y de portales externos que te cobran por cada contacto. Tu web debería generar leads propios.</p>
       </div>
       <div class="prob-item">
         <div class="prob-x">&times;</div>
-        <p><strong>Invisible en Google</strong> &mdash; Cuando alguien busca "inmobiliaria en [tu ciudad]", tu no apareces. Tu competencia si.</p>
+        <p><strong>Invisible en Google</strong> &mdash; Cuando alguien busca &laquo;inmobiliaria en [tu ciudad]&raquo;, tú no apareces. Tu competencia sí.</p>
       </div>
     </div>
   </div>
@@ -370,57 +446,57 @@ footer{padding:56px 48px 32px;background:var(--navy)}
   <div style="max-width:1100px;margin:0 auto">
     <p class="slabel reveal">Servicios para inmobiliarias</p>
     <h2 class="stitle reveal d1">Todo lo que tu inmobiliaria<br>necesita para <span>vender online</span></h2>
-    <p class="ssub reveal d2">Precios cerrados, sin letra pequena. Especializados en inmobiliarias boutique de 1 a 10 agentes.</p>
+    <p class="ssub reveal d2">Precios cerrados, sin letra pequeña. Especializados en inmobiliarias boutique de 1 a 10 agentes.</p>
   </div>
   <div class="srv-list">
-    <div class="srv-item reveal">
+    <a href="./servicios/web-inmobiliaria.html" class="srv-item reveal">
       <div class="srv-num">01</div>
       <div class="srv-body">
         <h3>Web inmobiliaria completa</h3>
-        <p>Tu web profesional con listado de propiedades, fichas individuales con galeria de fotos, filtros de busqueda, formularios de captacion en cada propiedad y diseno responsive. Lista en menos de dos semanas.</p>
+        <p>Tu web profesional con listado de propiedades, fichas individuales con galería de fotos, filtros de búsqueda, formularios de captación en cada propiedad y diseño responsive. Lista en menos de dos semanas.</p>
       </div>
-      <div class="srv-price">desde 1.200 EUR<small>pago unico &middot; dominio y hosting incluidos</small></div>
-    </div>
-    <div class="srv-item reveal d1">
+      <div class="srv-price">desde 1.200 &euro;<small>pago único &middot; dominio y hosting incluidos</small></div>
+    </a>
+    <a href="./servicios/rediseno-web.html" class="srv-item reveal d1">
       <div class="srv-num">02</div>
       <div class="srv-body">
-        <h3>Rediseno web inmobiliaria</h3>
-        <p>Tu web actual renovada con fichas de propiedad modernas, captacion de leads y optimizacion movil. Conservas tu dominio, SEO e historial.</p>
+        <h3>Rediseño web inmobiliaria</h3>
+        <p>Tu web actual renovada con fichas de propiedad modernas, captación de leads y optimización móvil. Conservas tu dominio, SEO e historial.</p>
       </div>
-      <div class="srv-price">desde 800 EUR<small>pago unico &middot; sin perder el SEO actual</small></div>
-    </div>
-    <div class="srv-item reveal d2">
+      <div class="srv-price">desde 800 &euro;<small>pago único &middot; sin perder el SEO actual</small></div>
+    </a>
+    <a href="./servicios/seo-local.html" class="srv-item reveal d2">
       <div class="srv-num">03</div>
       <div class="srv-body">
         <h3>SEO local inmobiliario</h3>
-        <p>Aparece primero en Google cuando alguien busca "inmobiliaria en [tu ciudad]". Mas visitas organicas, mas llamadas, mas cierres. Informes mensuales con resultados reales.</p>
+        <p>Aparece primero en Google cuando alguien busca &laquo;inmobiliaria en [tu ciudad]&raquo;. Más visitas orgánicas, más llamadas, más cierres. Informes mensuales con resultados reales.</p>
       </div>
-      <div class="srv-price">desde 350 EUR/mes<small>sin permanencia &middot; informes mensuales</small></div>
-    </div>
-    <div class="srv-item reveal d3">
+      <div class="srv-price">desde 350 &euro;/mes<small>sin permanencia &middot; informes mensuales</small></div>
+    </a>
+    <a href="./servicios/gestion-redes.html" class="srv-item reveal d3">
       <div class="srv-num">04</div>
       <div class="srv-body">
-        <h3>Gestion de redes para inmobiliarias</h3>
+        <h3>Gestión de redes para inmobiliarias</h3>
         <p>Publicaciones semanales con propiedades destacadas, tours virtuales en stories y estrategia de crecimiento en Instagram y Facebook orientada a captar propietarios y compradores.</p>
       </div>
-      <div class="srv-price">desde 400 EUR/mes<small>sin permanencia &middot; contenido incluido</small></div>
-    </div>
-    <div class="srv-item reveal d4">
+      <div class="srv-price">desde 400 &euro;/mes<small>sin permanencia &middot; contenido incluido</small></div>
+    </a>
+    <a href="./servicios/branding.html" class="srv-item reveal d4">
       <div class="srv-num">05</div>
       <div class="srv-body">
         <h3>Branding inmobiliario</h3>
-        <p>Logo, paleta de colores, tipografias y guia de estilo. Una identidad visual que transmite confianza y profesionalidad al propietario que busca agencia para vender.</p>
+        <p>Logo, paleta de colores, tipografías y guía de estilo. Una identidad visual que transmite confianza y profesionalidad al propietario que busca agencia para vender.</p>
       </div>
-      <div class="srv-price">desde 1.200 EUR<small>pago unico &middot; archivos editables incluidos</small></div>
-    </div>
-    <div class="srv-item reveal">
+      <div class="srv-price">desde 1.200 &euro;<small>pago único &middot; archivos editables incluidos</small></div>
+    </a>
+    <a href="./servicios/agente-ia.html" class="srv-item reveal">
       <div class="srv-num">06</div>
       <div class="srv-body">
         <h3>Agente de IA para inmobiliarias</h3>
-        <p>Asistente inteligente que responde consultas de compradores 24h, cualifica leads automaticamente y agenda visitas. Se integra con WhatsApp y tu web.</p>
+        <p>Asistente inteligente que responde consultas de compradores 24h, cualifica leads automáticamente y agenda visitas. Se integra con WhatsApp y tu web.</p>
       </div>
-      <div class="srv-price">desde 1.500 EUR<small>pago unico &middot; configuracion incluida</small></div>
-    </div>
+      <div class="srv-price">desde 1.500 &euro;<small>pago único &middot; configuración incluida</small></div>
+    </a>
   </div>
 </section>
 
@@ -428,97 +504,86 @@ footer{padding:56px 48px 32px;background:var(--navy)}
 <section class="portfolio" id="portfolio">
   <div class="port-header">
     <p class="slabel reveal">Portfolio</p>
-    <h2 class="stitle reveal d1">Proyectos que<br>hablan por si solos</h2>
-    <p class="ssub reveal d2">Cada web que entregamos esta disenada para impresionar, convertir y posicionarse.</p>
+    <h2 class="stitle reveal d1">Tres estilos,<br>un objetivo: <span>que vendas más</span></h2>
+    <p class="ssub reveal d2">Cada demo es un tipo de web que construimos para inmobiliarias reales. Navégalas, pruébalas, imagina la tuya.</p>
   </div>
   <div class="port-grid">
-    <div class="port-card port-featured reveal">
-      <div style="width:100%;height:100%;background:linear-gradient(135deg,#1B4332 0%,#C9A227 100%)"></div>
+    <div class="port-card reveal">
+      <div class="port-card-bg" style="background:linear-gradient(135deg,#1B4332 0%,#C9A227 100%)"></div>
       <div class="port-ov">
-        <span class="port-tag">Inmobiliaria &middot; Demo</span>
+        <span class="port-tag">Boutique &middot; Premium</span>
         <h3 class="port-name">Solara Inmobiliaria</h3>
-        <p class="port-desc">Web completa para inmobiliaria boutique: listado de propiedades, fichas individuales, equipo y captacion de leads. El tipo de web que construimos para nuestros clientes.</p>
+        <p class="port-desc">Elegante, cálida, con serif. Para inmobiliarias de lujo que buscan transmitir exclusividad y confianza.</p>
         <a class="port-link" href="./solara/" target="_blank">Ver demo en vivo &rarr;</a>
       </div>
     </div>
     <div class="port-card reveal d1">
-      <div style="width:100%;height:100%;background:linear-gradient(135deg,#2d1b69 0%,#11998e 100%)"></div>
+      <div class="port-card-bg" style="background:linear-gradient(135deg,#0f172a 0%,#64748b 100%)"></div>
       <div class="port-ov">
-        <span class="port-tag">E-Commerce &middot; Cosmetica</span>
-        <h3 class="port-name">CYPER Botanical Oils</h3>
-        <p class="port-desc">Tienda premium de aceites botanicos con carrito funcional y paginas de producto individuales.</p>
-        <a class="port-link" href="https://keen-lamington-095de2.netlify.app/" target="_blank">Ver proyecto &rarr;</a>
+        <span class="port-tag">Minimalista &middot; Urbana</span>
+        <h3 class="port-name">NovaCasa</h3>
+        <p class="port-desc">Limpia, moderna, con mucho espacio en blanco. Para agencias de obra nueva y mercado urbano.</p>
+        <a class="port-link" href="./novacasa/" target="_blank">Ver demo en vivo &rarr;</a>
       </div>
     </div>
-  </div>
-  <div class="port-grid row2" style="margin-top:3px">
-    <div class="port-card reveal">
-      <div style="width:100%;height:100%;background:linear-gradient(135deg,#1a2744 0%,#e85d04 100%)"></div>
+    <div class="port-card reveal d2">
+      <div class="port-card-bg" style="background:linear-gradient(135deg,#78350f 0%,#d4a574 100%)"></div>
       <div class="port-ov">
-        <span class="port-tag">E-Commerce &middot; Premium</span>
-        <h3 class="port-name">VELOX Urban Bikes</h3>
-        <p class="port-desc">Web de bicis de alta gama con configurador interactivo. Color, talla, manillar y precio en tiempo real.</p>
-        <a class="port-link" href="https://stellular-gumption-febb6c.netlify.app/" target="_blank">Ver proyecto &rarr;</a>
-      </div>
-    </div>
-    <div class="port-card reveal d1">
-      <div style="width:100%;height:100%;background:linear-gradient(135deg,#0f172a 0%,#334155 100%)"></div>
-      <div class="port-ov">
-        <span class="port-tag">Proximamente</span>
-        <h3 class="port-name">Tu inmobiliaria aqui</h3>
-        <p class="port-desc">El proximo proyecto del portfolio puede ser el tuyo. Hablemos de como hacer crecer tu inmobiliaria online.</p>
-        <a class="port-link" href="#contacto">Hablemos &rarr;</a>
+        <span class="port-tag">Clásica &middot; Confianza</span>
+        <h3 class="port-name">Fincas del Sur</h3>
+        <p class="port-desc">Densa, informativa, orientada a búsqueda. Para la inmobiliaria de barrio con solera y trayectoria.</p>
+        <a class="port-link" href="./fincasdelsur/" target="_blank">Ver demo en vivo &rarr;</a>
       </div>
     </div>
   </div>
   <div class="port-more">
-    <p>Cada proyecto incluye diseno a medida, optimizacion movil y soporte tecnico.</p>
+    <p>Cada proyecto incluye diseño a medida, optimización móvil y soporte técnico.</p>
     <a href="#contacto" class="btn-p">Hablar de tu proyecto &rarr;</a>
   </div>
 </section>
 
-<!-- ANATOMIA DE UNA WEB QUE CONVIERTE -->
+<!-- ANATOMÍA DE UNA WEB QUE CONVIERTE -->
 <section class="anatomia" id="anatomia">
   <div style="max-width:1100px;margin:0 auto">
-    <p class="slabel reveal">Por que funciona</p>
-    <h2 class="stitle reveal d1">Que hace que una web inmobiliaria<br><span>convierta visitas en llamadas</span></h2>
-    <p class="ssub reveal d2">No es solo diseno bonito. Cada elemento de tu web tiene un proposito: que el comprador levante el telefono.</p>
+    <p class="slabel reveal">Por qué funciona</p>
+    <h2 class="stitle reveal d1">Qué hace que una web inmobiliaria<br><span>convierta visitas en llamadas</span></h2>
+    <p class="ssub reveal d2">No es solo diseño bonito. Cada elemento de tu web tiene un propósito: que el comprador levante el teléfono.</p>
   </div>
   <div class="anat-grid">
     <div class="anat-item reveal">
       <div class="anat-number">01</div>
-      <h3>Fichas de propiedad con galeria profesional</h3>
-      <p>Fotos grandes, descripcion detallada, plano y ubicacion en mapa. El comprador se imagina viviendo ahi antes de llamar.</p>
+      <h3>Fichas de propiedad con galería profesional</h3>
+      <p>Fotos grandes, descripción detallada, plano y ubicación en mapa. El comprador se imagina viviendo ahí antes de llamar.</p>
     </div>
     <div class="anat-item reveal d1">
       <div class="anat-number">02</div>
       <h3>Formulario de contacto en cada propiedad</h3>
-      <p>No obligues al usuario a buscar tu telefono. Cada ficha tiene un formulario que convierte el interes en un lead con nombre, telefono y propiedad de interes.</p>
+      <p>No obligues al usuario a buscar tu teléfono. Cada ficha tiene un formulario que convierte el interés en un lead con nombre, teléfono y propiedad de interés.</p>
     </div>
     <div class="anat-item reveal d2">
       <div class="anat-number">03</div>
       <h3>Velocidad de carga inferior a 2 segundos</h3>
-      <p>El 53% de los usuarios abandona una web que tarda mas de 3 segundos. Cada segundo cuenta, sobre todo en movil.</p>
+      <p>El 53% de los usuarios abandona una web que tarda más de 3 segundos. Cada segundo cuenta, sobre todo en móvil.</p>
     </div>
     <div class="anat-item reveal d3">
       <div class="anat-number">04</div>
-      <h3>Optimizada para movil (el 80% busca desde el movil)</h3>
-      <p>Tu web tiene que verse perfecta en el telefono del comprador que busca piso en el metro. No es opcional, es obligatorio.</p>
+      <h3>Optimizada para móvil (el 80% busca desde el móvil)</h3>
+      <p>Tu web tiene que verse perfecta en el teléfono del comprador que busca piso en el metro. No es opcional, es obligatorio.</p>
     </div>
     <div class="anat-item reveal">
       <div class="anat-number">05</div>
       <h3>SEO local que te pone primero</h3>
-      <p>Cuando alguien busca "pisos en venta en [tu ciudad]", tu web aparece. Eso son llamadas que no pagas a ningun portal.</p>
+      <p>Cuando alguien busca &laquo;pisos en venta en [tu ciudad]&raquo;, tu web aparece. Eso son llamadas que no pagas a ningún portal.</p>
     </div>
     <div class="anat-item reveal d1">
       <div class="anat-number">06</div>
-      <h3>Diseno que transmite confianza</h3>
-      <p>Un propietario no deja la venta de su casa a una inmobiliaria con web cutre. Tu web ES tu carta de presentacion.</p>
+      <h3>Diseño que transmite confianza</h3>
+      <p>Un propietario no deja la venta de su casa a una inmobiliaria con web cutre. Tu web ES tu carta de presentación.</p>
     </div>
   </div>
 </section>
 
-<!-- NUMEROS -->
+<!-- NÚMEROS -->
 <div class="numeros">
   <div class="num-item reveal"><div class="num-val">+50<span>.</span></div><div class="num-lbl">Proyectos entregados</div></div>
   <div class="num-item reveal d1"><div class="num-val">&lt;2<span>w</span></div><div class="num-lbl">Tiempo de entrega</div></div>
@@ -529,15 +594,15 @@ footer{padding:56px 48px 32px;background:var(--navy)}
 <!-- PROCESO -->
 <section class="proceso" id="proceso">
   <div style="max-width:1100px;margin:0 auto">
-    <p class="slabel reveal">Como funciona</p>
+    <p class="slabel reveal">Cómo funciona</p>
     <h2 class="stitle reveal d1">Del primer contacto a tu<br>web inmobiliaria en <span>4 pasos</span></h2>
-    <p class="ssub reveal d2">Un proceso claro, rapido y sin complicaciones.</p>
+    <p class="ssub reveal d2">Un proceso claro, rápido y sin complicaciones.</p>
   </div>
   <div class="proceso-steps">
-    <div class="pstep reveal"><div class="pstep-circle">1</div><h3 class="pstep-title">Hablamos</h3><p class="pstep-desc">Cuentanos tu inmobiliaria, tu zona y que necesitas. Por WhatsApp, email o videollamada.</p></div>
+    <div class="pstep reveal"><div class="pstep-circle">1</div><h3 class="pstep-title">Hablamos</h3><p class="pstep-desc">Cuéntanos tu inmobiliaria, tu zona y qué necesitas. Por WhatsApp, email o videollamada.</p></div>
     <div class="pstep reveal d1"><div class="pstep-circle">2</div><h3 class="pstep-title">Presupuesto</h3><p class="pstep-desc">En 24h tienes propuesta con precio fijo y detallado. Sin sorpresas ni costes ocultos.</p></div>
-    <div class="pstep reveal d2"><div class="pstep-circle">3</div><h3 class="pstep-title">Desarrollo</h3><p class="pstep-desc">Empezamos de inmediato. Te mantenemos informado y te mostramos avances cada pocos dias.</p></div>
-    <div class="pstep reveal d3"><div class="pstep-circle">4</div><h3 class="pstep-title">Entrega</h3><p class="pstep-desc">Tu web lista en el plazo acordado con soporte tecnico incluido los primeros 30 dias.</p></div>
+    <div class="pstep reveal d2"><div class="pstep-circle">3</div><h3 class="pstep-title">Desarrollo</h3><p class="pstep-desc">Empezamos de inmediato. Te mantenemos informado y te mostramos avances cada pocos días.</p></div>
+    <div class="pstep reveal d3"><div class="pstep-circle">4</div><h3 class="pstep-title">Entrega</h3><p class="pstep-desc">Tu web lista en el plazo acordado con soporte técnico incluido los primeros 30 días.</p></div>
   </div>
 </section>
 
@@ -545,41 +610,89 @@ footer{padding:56px 48px 32px;background:var(--navy)}
 <section class="testimonios" id="testimonios">
   <p class="slabel reveal">Testimonios</p>
   <h2 class="stitle reveal d1">Lo que dicen<br>nuestros clientes</h2>
-  <p class="ssub reveal d2">Inmobiliarias y negocios reales que ya estan creciendo en internet con nuestra ayuda.</p>
+  <p class="ssub reveal d2">Inmobiliarias y negocios reales que ya están creciendo en internet con nuestra ayuda.</p>
   <div class="test-grid">
     <div class="test-card reveal">
       <div class="test-stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
-      <p class="test-txt">"Llevabamos anos con una web que nos daba verguenza ensenar a los propietarios. CLICKICLICK nos entrego una web con fichas de propiedad espectaculares en diez dias. El primer mes recibimos mas contactos por la web que en todo el ano anterior. El cambio ha sido brutal."</p>
+      <p class="test-txt">&laquo;Llevábamos años con una web que nos daba vergüenza enseñar a los propietarios. CLICKICLICK nos entregó una web con fichas de propiedad espectaculares en diez días. El primer mes recibimos más contactos por la web que en todo el año anterior. El cambio ha sido brutal.&raquo;</p>
       <div class="test-autor"><div class="test-av">CN</div><div><div class="test-nombre">Carlos Navarro</div><div class="test-emp">Inmobiliaria Navarro &middot; Marbella</div></div></div>
     </div>
     <div class="test-card reveal d1">
       <div class="test-stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
-      <p class="test-txt">"El trato es directo, el precio cerrado y la entrega rapidisima. Ahora los propietarios nos toman en serio desde el primer momento."</p>
-      <div class="test-autor"><div class="test-av">MC</div><div><div class="test-nombre">Maria Carmen Ruiz</div><div class="test-emp">Clinica Dental Ruiz &middot; Sevilla</div></div></div>
+      <p class="test-txt">&laquo;El trato es directo, el precio cerrado y la entrega rapidísima. Ahora los propietarios nos toman en serio desde el primer momento.&raquo;</p>
+      <div class="test-autor"><div class="test-av">MC</div><div><div class="test-nombre">María Carmen Ruiz</div><div class="test-emp">Clínica Dental Ruiz &middot; Sevilla</div></div></div>
     </div>
   </div>
   <div class="test-grid-row2">
     <div class="test-card reveal">
       <div class="test-stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
-      <p class="test-txt">"El agente de IA que nos configuraron responde consultas de compradores a cualquier hora. Ha reducido a la mitad el tiempo que dedicabamos a llamadas repetitivas."</p>
-      <div class="test-autor"><div class="test-av">AB</div><div><div class="test-nombre">Ana Belen Torres</div><div class="test-emp">Torres Propiedades &middot; Madrid</div></div></div>
+      <p class="test-txt">&laquo;El agente de IA que nos configuraron responde consultas de compradores a cualquier hora. Ha reducido a la mitad el tiempo que dedicábamos a llamadas repetitivas.&raquo;</p>
+      <div class="test-autor"><div class="test-av">AB</div><div><div class="test-nombre">Ana Belén Torres</div><div class="test-emp">Torres Propiedades &middot; Madrid</div></div></div>
     </div>
     <div class="test-card reveal d1">
       <div class="test-stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
-      <p class="test-txt">"Somos una inmobiliaria familiar de tres personas. Pensabamos que una web profesional seria carisima. Con CLICKICLICK fue todo lo contrario: precio justo, resultado espectacular y ahora los clientes nos encuentran en Google sin que paguemos publicidad. La mejor inversion que hemos hecho para el negocio."</p>
-      <div class="test-autor"><div class="test-av">RS</div><div><div class="test-nombre">Roberto Saez</div><div class="test-emp">Inmobiliaria Saez &middot; Barcelona</div></div></div>
+      <p class="test-txt">&laquo;Somos una inmobiliaria familiar de tres personas. Pensábamos que una web profesional sería carísima. Con CLICKICLICK fue todo lo contrario: precio justo, resultado espectacular y ahora los clientes nos encuentran en Google sin que paguemos publicidad. La mejor inversión que hemos hecho para el negocio.&raquo;</p>
+      <div class="test-autor"><div class="test-av">RS</div><div><div class="test-nombre">Roberto Sáez</div><div class="test-emp">Inmobiliaria Sáez &middot; Barcelona</div></div></div>
     </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div style="max-width:1100px;margin:0 auto">
+    <p class="slabel reveal">Preguntas frecuentes</p>
+    <h2 class="stitle reveal d1">Lo que nos preguntan<br><span>antes de empezar</span></h2>
+  </div>
+  <div class="faq-list">
+    <div class="faq-item reveal">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">¿Cuánto cuesta una web para mi inmobiliaria?</div>
+      <div class="faq-a"><p>Desde 1.200 &euro; para una web completa con listado de propiedades, fichas individuales y captación de leads. Precio cerrado desde el primer día, sin sorpresas.</p></div>
+    </div>
+    <div class="faq-item reveal d1">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">¿Cuánto tardáis en entregar?</div>
+      <div class="faq-a"><p>Entre 7 y 14 días para una web completa. Rediseños en 5-10 días. Empezamos en cuanto nos das el visto bueno.</p></div>
+    </div>
+    <div class="faq-item reveal d2">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">¿Puedo actualizar las propiedades yo mismo?</div>
+      <div class="faq-a"><p>Sí. Te entregamos un panel sencillo donde puedes añadir, editar y eliminar propiedades sin necesidad de conocimientos técnicos.</p></div>
+    </div>
+    <div class="faq-item reveal d3">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">¿La web funciona bien en móvil?</div>
+      <div class="faq-a"><p>Todas nuestras webs son responsive y están optimizadas para móvil, donde el 80% de los compradores busca propiedades.</p></div>
+    </div>
+    <div class="faq-item reveal">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">¿Incluye posicionamiento en Google (SEO)?</div>
+      <div class="faq-a"><p>La web incluye optimización SEO básica. Para un posicionamiento activo con resultados medibles, ofrecemos nuestro servicio de SEO local desde 350 &euro;/mes.</p></div>
+    </div>
+    <div class="faq-item reveal d1">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">¿Qué pasa después de la entrega?</div>
+      <div class="faq-a"><p>30 días de soporte técnico incluido. Después, puedes contratar mantenimiento mensual o gestionarlo tú mismo. Tu web es tuya al 100%.</p></div>
+    </div>
+    <div class="faq-item reveal d2">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">¿Trabajáis con inmobiliarias fuera de España?</div>
+      <div class="faq-a"><p>Sí. Trabajamos con inmobiliarias en España, México, Colombia, Argentina y Chile. El proceso es 100% remoto y la comunicación fluida.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- NUESTRA HISTORIA -->
+<section class="historia">
+  <div class="hist-inner reveal">
+    <p class="slabel">Nuestra historia</p>
+    <h2 class="stitle" style="text-align:center">De la frustración<br>a la <span>especialización</span></h2>
+    <p style="margin-top:24px">CLICKICLICK nació de una frustración real: ver cómo inmobiliarias con buen servicio perdían clientes porque su web no les hacía justicia. Demasiadas agencias con años de experiencia y reputación en su zona seguían dependiendo de una web antigua que espantaba más de lo que atraía.</p>
+    <p style="margin-top:16px">Fundada en 2024, somos una agencia digital que decidió especializarse en un solo sector para hacerlo realmente bien. No somos una agencia enorme con cientos de clientes. Somos un equipo pequeño que trabaja directamente contigo, entiende tu negocio y entrega resultados rápido. Cada web que construimos está pensada para un solo objetivo: que tu teléfono suene más.</p>
   </div>
 </section>
 
 <!-- CTA FINAL -->
 <section class="cta-final">
   <div class="cta-inner">
-    <p class="slabel reveal" style="color:var(--orange)">Empecemos</p>
+    <p class="slabel reveal" style="color:var(--teal)">Empecemos</p>
     <h2 class="cta-title reveal d1">Tu inmobiliaria merece<br>una web que <span>venda</span></h2>
     <p class="cta-sub reveal d2">Primera consulta gratuita. Sin compromiso. Respuesta en menos de 24 horas.</p>
     <div class="cta-btns">
-      <a href="https://calendly.com/clickiclickweb" target="_blank" class="btn-p reveal d3">Agenda una llamada &rarr;</a>
+      <a href="https://calendly.com/diegopuelles/30min" target="_blank" class="btn-p reveal d3">Agenda una llamada &rarr;</a>
       <a href="#contacto" class="btn-g reveal d3">Pedir presupuesto gratis</a>
     </div>
     <div class="cta-links reveal d3">
@@ -595,46 +708,57 @@ footer{padding:56px 48px 32px;background:var(--navy)}
     <div>
       <p class="slabel reveal">Contacto</p>
       <h2 class="stitle reveal d1">Hablemos de<br>tu <span>inmobiliaria</span></h2>
-      <p class="cinfo-desc reveal d2">Cuentanos que necesitas y en menos de 24 horas tienes tu presupuesto detallado. Sin compromiso.</p>
+      <p class="cinfo-desc reveal d2">Cuéntanos qué necesitas y en menos de 24 horas tienes tu presupuesto detallado. Sin compromiso.</p>
       <div class="cdato reveal d2">
-        <div class="cdato-icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="#FF5500" stroke-width="2"/><path d="M3 8l9 6 9-6" stroke="#FF5500" stroke-width="2"/></svg></div>
+        <div class="cdato-icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="#0F766E" stroke-width="2"/><path d="M3 8l9 6 9-6" stroke="#0F766E" stroke-width="2"/></svg></div>
         <div><span class="cdato-lbl">Email</span><span class="cdato-val"><a href="mailto:clickiclickweb@gmail.com">clickiclickweb@gmail.com</a></span></div>
       </div>
       <div class="cdato reveal d2">
-        <div class="cdato-icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" stroke="#FF5500" stroke-width="2"/></svg></div>
+        <div class="cdato-icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" stroke="#0F766E" stroke-width="2"/></svg></div>
         <div><span class="cdato-lbl">WhatsApp</span><span class="cdato-val"><a href="https://wa.me/34722753559" target="_blank">+34 722 753 559</a></span></div>
       </div>
       <div class="cdato reveal d2">
-        <div class="cdato-icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#FF5500" stroke-width="2"/><path d="M12 6v6l4 2" stroke="#FF5500" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <div class="cdato-icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#0F766E" stroke-width="2"/><path d="M12 6v6l4 2" stroke="#0F766E" stroke-width="2" stroke-linecap="round"/></svg></div>
         <div><span class="cdato-lbl">Respuesta en</span><span class="cdato-val">Menos de 24 horas</span></div>
       </div>
-      <a href="https://calendly.com/clickiclickweb" target="_blank" class="cal-btn reveal d3">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="18" rx="2" stroke="#FF5500" stroke-width="2"/><path d="M16 2v4M8 2v4M3 10h18" stroke="#FF5500" stroke-width="2" stroke-linecap="round"/></svg>
+      <a href="https://calendly.com/diegopuelles/30min" target="_blank" class="cal-btn reveal d3">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="18" rx="2" stroke="#0F766E" stroke-width="2"/><path d="M16 2v4M8 2v4M3 10h18" stroke="#0F766E" stroke-width="2" stroke-linecap="round"/></svg>
         Agenda una llamada
       </a>
     </div>
     <div class="reveal d2">
-      <form class="contact-form" action="https://formspree.io/f/xpwzkvao" method="POST">
+      <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="ff9e17a4-20d8-49d3-8319-3414194ec45a">
+        <input type="hidden" name="subject" value="Nuevo contacto desde CLICKICLICK">
+        <input type="hidden" name="from_name" value="CLICKICLICK Web">
         <div class="fg"><label>Nombre y nombre de tu inmobiliaria</label><input type="text" name="nombre" placeholder="Ej: Carlos, Inmobiliaria Navarro" required></div>
         <div class="fg"><label>Email o WhatsApp</label><input type="text" name="contacto" placeholder="email@tuinmobiliaria.com" required></div>
         <div class="fg"><label>Tu ciudad / zona</label><input type="text" name="ciudad" placeholder="Ej: Marbella, Costa del Sol"></div>
-        <div class="fg"><label>Que necesitas</label>
+        <div class="fg"><label>Qué necesitas</label>
           <select name="servicio">
             <option value="">Selecciona un servicio</option>
             <option value="web-nueva">Web inmobiliaria nueva</option>
-            <option value="rediseno">Rediseno de web existente</option>
+            <option value="rediseno">Rediseño de web existente</option>
             <option value="seo">SEO local inmobiliario</option>
-            <option value="redes">Gestion de redes sociales</option>
+            <option value="redes">Gestión de redes sociales</option>
             <option value="branding">Branding inmobiliario</option>
             <option value="ia">Agente de IA</option>
             <option value="otro">Otro / No estoy seguro</option>
           </select>
         </div>
-        <div class="fg"><label>Cuentanos mas (opcional)</label><textarea name="mensaje" placeholder="Cuantos agentes sois, que zona cubrís, que os gustaria mejorar..."></textarea></div>
+        <div class="fg"><label>Cuéntanos más (opcional)</label><textarea name="mensaje" placeholder="Cuántos agentes sois, qué zona cubrís, qué os gustaría mejorar..."></textarea></div>
         <button type="submit" class="form-btn">Enviar mensaje &rarr;</button>
       </form>
     </div>
   </div>
+</section>
+
+<!-- AYUDA -->
+<section class="ayuda">
+  <p class="slabel">¿Necesitas ayuda?</p>
+  <p>Si ya eres cliente o tienes una consulta técnica, escríbenos directamente.</p>
+  <p><a href="mailto:clickiclickweb@gmail.com">clickiclickweb@gmail.com</a> &nbsp;&middot;&nbsp; <a href="https://wa.me/34722753559" target="_blank">+34 722 753 559</a></p>
+  <p style="font-size:12px;color:var(--cdim);margin-top:8px">Respondemos en menos de 24 horas, siempre.</p>
 </section>
 
 <!-- FOOTER -->
@@ -642,24 +766,25 @@ footer{padding:56px 48px 32px;background:var(--navy)}
   <div class="footer-grid">
     <div>
       <div class="flogo"><span>CLICKI</span>CLICK</div>
-      <p class="fdesc">Agencia digital especializada en inmobiliarias boutique. Webs que venden, SEO que posiciona y agentes de IA que trabajan por ti. Sin rodeos y en tiempo record.</p>
+      <p class="fdesc">Agencia digital especializada en inmobiliarias boutique. Webs que venden, SEO que posiciona y agentes de IA que trabajan por ti. Sin rodeos y en tiempo récord.</p>
     </div>
     <div class="fcol">
       <h4>Servicios</h4>
-      <a href="#servicios">Web inmobiliaria</a>
-      <a href="#servicios">Rediseno web</a>
-      <a href="#servicios">SEO local</a>
-      <a href="#servicios">Redes sociales</a>
-      <a href="#servicios">Branding</a>
-      <a href="#servicios">Agente de IA</a>
+      <a href="./servicios/web-inmobiliaria.html">Web inmobiliaria</a>
+      <a href="./servicios/rediseno-web.html">Rediseño web</a>
+      <a href="./servicios/seo-local.html">SEO local</a>
+      <a href="./servicios/gestion-redes.html">Redes sociales</a>
+      <a href="./servicios/branding.html">Branding</a>
+      <a href="./servicios/agente-ia.html">Agente de IA</a>
     </div>
     <div class="fcol">
-      <h4>Enlace rapido</h4>
+      <h4>Enlace rápido</h4>
       <a href="#portfolio">Portfolio</a>
-      <a href="#proceso">Como funciona</a>
+      <a href="#proceso">Cómo funciona</a>
+      <a href="#faq">Preguntas frecuentes</a>
       <a href="#testimonios">Clientes</a>
       <a href="#contacto">Contactar</a>
-      <a href="https://calendly.com/clickiclickweb" target="_blank">Agendar llamada</a>
+      <a href="https://calendly.com/diegopuelles/30min" target="_blank">Agendar llamada</a>
     </div>
   </div>
   <div class="footer-bottom">
@@ -668,10 +793,16 @@ footer{padding:56px 48px 32px;background:var(--navy)}
   </div>
 </footer>
 
+<!-- FLOATING CTA -->
+<a href="#contacto" class="float-cta" id="floatCta">
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" stroke="white" stroke-width="2"/></svg>
+  Contactar
+</a>
+
 <script>
 function toggleMenu(){document.getElementById('menuMovil').classList.toggle('open')}
 
-// Nav dark mode on scroll past hero
+// Nav dark/light on scroll
 var nav=document.getElementById('mainNav');
 var hero=document.querySelector('.hero');
 function checkNav(){
@@ -681,14 +812,34 @@ function checkNav(){
 checkNav();
 window.addEventListener('scroll',checkNav,{passive:true});
 
+// Floating CTA visibility
+var floatCta=document.getElementById('floatCta');
+window.addEventListener('scroll',function(){
+  if(!hero)return;
+  floatCta.classList.toggle('show',window.scrollY>hero.offsetHeight);
+},{passive:true});
+
 // Scroll reveal
 var obs=new IntersectionObserver(function(entries){
   entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target)}})
-},{threshold:0.15});
+},{threshold:0.12});
 document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el)});
 
-// Contact form feedback
-var form=document.querySelector('.contact-form');
+// FAQ accordion
+document.querySelectorAll('.faq-item').forEach(function(item){
+  var a=item.querySelector('.faq-a');
+  var p=a.querySelector('p');
+  item.addEventListener('click',function(){
+    if(item.classList.contains('open')){
+      a.style.maxHeight='0';
+    }else{
+      a.style.maxHeight=p.scrollHeight+24+'px';
+    }
+  });
+});
+
+// Contact form with Web3Forms
+var form=document.getElementById('contactForm');
 if(form){
   form.addEventListener('submit',function(e){
     e.preventDefault();
@@ -697,11 +848,19 @@ if(form){
     btn.textContent='Enviando...';
     btn.disabled=true;
     fetch(form.action,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}})
-    .then(function(res){
-      if(res.ok){btn.textContent='Mensaje enviado';btn.style.background='#16a34a';form.reset()}
-      else{throw new Error()}
+    .then(function(res){return res.json()})
+    .then(function(data){
+      if(data.success){
+        btn.textContent='Mensaje enviado';
+        btn.style.background='#16a34a';
+        form.reset();
+      }else{throw new Error()}
     })
-    .catch(function(){btn.textContent=original;btn.disabled=false;alert('Escribenos a clickiclickweb@gmail.com')})
+    .catch(function(){
+      btn.textContent=original;
+      btn.disabled=false;
+      alert('Error al enviar. Escríbenos directamente a clickiclickweb@gmail.com');
+    });
   });
 }
 </script>
